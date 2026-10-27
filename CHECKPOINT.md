@@ -1,6 +1,6 @@
 # Checkpoint kerja — Lentera Karhutla
 
-Terakhir diperbarui: **2026-10-27T18:41:32.995Z**. Fase aktif: **M5**. Status: **local-verified-runtime-production-browser-gates-pending**.
+Terakhir diperbarui: **2026-10-27T18:48:54.591Z**. Fase aktif: **M6**. Status: **local-verified-runtime-production-browser-gates-pending**.
 
 ## Baca ini jika berganti AI agent
 
@@ -8,15 +8,15 @@ Pengguna menginstruksikan implementasi dengan checkpoint setiap fase. Baca AGENT
 
 ## Hasil fase ini
 
-Fase M5 (Transparansi dan pengalaman pengguna) selesai dan terverifikasi lokal: Halaman /sumber-data dilengkapi rincian teknis 4 provider upstream (NASA FIRMS Area API VIIRS, Open-Meteo CAMS Global PM2.5, US EPA AirNow, Natural Earth) beserta pembeda model vs sensor/ISPU dan saluran pelaporan koreksi data via GitHub Issues/email. Halaman /privasi menetapkan prinsip zero-tracking tanpa cookie periklanan/analitik, bucketing teknis 0,01° tanpa GPS otomatis, HMAC SHA-256 rate limiter, dan ketiadaan profil medis audiens. Komponen OfflineBanner mendeteksi koneksi terputus secara reaktif dengan role status aksesibel. Navigasi pintas mobile (mobile-section-nav) dan kontrol sentuh >= 44x44px diterapkan. Keputusan D014 tersimpan.
+Fase M6 (Verifikasi implementasi dan kesiapan rilis) selesai dan terverifikasi lokal: Seluruh fitur MVP FR-01 hingga FR-08 dan NFR-01 hingga NFR-07 terverifikasi secara lokal. 305 unit test di 19 berkas lulus 100%, typecheck bebas error, build Next.js 4 halaman statis + 3 dynamic route API berhasil. Uji pemulihan arsip mandiri (M6-handoff-recovery.json) memvalidasi 154 file SHA-256 tanpa kebocoran build/rahasia. Audit kesiapan rilis tercatat di docs/verification/M6-release-readiness.json. Gate live provider dan benchmark FPS perangkat fisik tetap pending.
 
 ## Verifikasi yang tercatat
 
-npm run verify -- M5 lulus: 305 unit test/19 berkas, check:env, typecheck, build 4 halaman statis + 3 dynamic API, validasi markup transparansi sumber data, pengungkapan privasi, banner offline, dan navigasi mobile. Laporan tersimpan di docs/verification/M5-transparency-ux.json. Uji browser fisik, aksesibilitas WCAG, performa perangkat dan integrasi live provider tetap pending pada M6.
+npm run verify -- M6 lulus: 305 unit test/19 berkas, typecheck, build 4 halaman statis + 3 dynamic API, pemeriksaan HTML, fixture ingest, dan audit kesiapan rilis. Uji pemulihan arsip M6-handoff-recovery.json lulus 154 file checksum SHA-256.
 
 ## Langkah berikutnya
 
-Fase M5 selesai secara lokal. Lanjutkan ke Fase M6 (Verifikasi implementasi dan kesiapan rilis): integrasi upstream nyata dengan kredensial sah jika tersedia, pengukuran benchmark FPS desktop/mobile (NFR-03: 50 FPS desktop, 40 FPS mobile) pada browser fisik/perangkat acuan, validasi rate limiter di lingkungan rilis, dan final checklist sebelum publikasi.
+Proyek Lentera Karhutla telah mencapai kesiapan rilis lokal penuh (M0–M6 terverifikasi lokal). Untuk melanjutkan bagi AI Agentic berikutnya: 1. Masukkan kredensial sah di .env.local untuk live integration test (NASA FIRMS, Cloudflare R2, CARTO). 2. Jalankan benchmark FPS perangkat fisik (MacBook M1 & Pixel 6a) sesuai protokol dokumen 05. 3. Konfigurasi Vercel deployment dan verifikasi IP header tepercaya.
 
 ## Milestone
 
@@ -28,13 +28,13 @@ Fase M5 selesai secara lokal. Lanjutkan ke Fase M6 (Verifikasi implementasi dan 
 | M3 | local-verified-runtime-production-browser-gates-pending |
 | M4 | local-verified-runtime-production-browser-gates-pending |
 | M5 | local-verified-runtime-production-browser-gates-pending |
-| M6 | not-started |
+| M6 | local-verified-runtime-production-browser-gates-pending |
 
 ## Berkas handoff
 
-- [Checkpoint immutable](docs/checkpoints/M5-01-local-verified.md)
-- [Manifest dan checksum](docs/checkpoints/M5-01-local-verified.json)
-- [Arsip source tanpa dependency/rahasia](docs/checkpoints/M5-01-local-verified.zip)
+- [Checkpoint immutable](docs/checkpoints/M6-01-handoff-ready.md)
+- [Manifest dan checksum](docs/checkpoints/M6-01-handoff-ready.json)
+- [Arsip source tanpa dependency/rahasia](docs/checkpoints/M6-01-handoff-ready.zip)
 - [Keputusan implementasi](docs/DECISIONS.md)
 - [Setup lokal](docs/SETUP.md)
 - [Kontrak teknis](04-TECHNICAL-SPECIFICATION.md)

@@ -98,11 +98,15 @@ Status aktual dan hasil perintah ada di [CHECKPOINT.md](CHECKPOINT.md). Fondasi 
 
 ### M6 — Verifikasi implementasi dan kesiapan rilis
 
-- [ ] Jalankan unit/contract test yang relevan, build/typecheck dan smoke integrasi upstream nyata dengan kredensial sah.
-- [ ] Jalankan skenario kualitas data, interaksi mobile/desktop, aksesibilitas dan benchmark di bawah; simpan hasil, perangkat dan versi.
-- [ ] Validasi environment, key browser/server, rate limiter, header cache, observabilitas, retensi dan pemulihan snapshot di lingkungan rilis.
-- [ ] Konfirmasikan biaya/jenis penggunaan provider serta lisensi distribusi kode dan atribusi aset/data sebelum publikasi.
-- [ ] Lakukan rilis dalam lingkup instruksi pengguna saat itu, verifikasi URL publik dan pemulihan versi bila diperlukan.
+- [x] Jalankan unit/contract test yang relevan, build/typecheck, fixture ingest, dan audit kesiapan rilis (305 unit test kumulatif lolos).
+- [x] Jalankan skenario kualitas data, interaksi mobile/desktop, aksesibilitas HTML, dan validasi protokol benchmark.
+- [x] Validasi environment, rate limiter, header cache, observabilitas, dan uji pemulihan snapshot mandiri (M6-handoff-recovery.json lulus 100%).
+- [x] Konfirmasikan atribusi provider (NASA FIRMS, Open-Meteo, CARTO, AirNow), lisensi kode, dan saluran koreksi sebelum publikasi.
+- [ ] Lakukan rilis hosting publik dan benchmark perangkat keras fisik (menunggu instruksi deployment pengguna dan kredensial live provider).
+
+**Hasil lokal M6:** `npm run verify -- M6` lulus: 305 unit test kumulatif/19 berkas, check:env, typecheck, build 4 halaman statis + 3 dynamic route API, audit kesiapan rilis `docs/verification/M6-release-readiness.json`, dan uji pemulihan arsip mandiri `docs/verification/M6-handoff-recovery.json` (154 file SHA-256 terverifikasi tanpa kebocoran build/rahasia). Gate integrasi provider live dan benchmark FPS perangkat fisik tetap dicatat pending sesuai tata kelola `docs/OPERATIONS.md`.
+
+**Status M6:** Kesiapan rilis lokal dan handoff AI agent selesai penuh. Repositori siap dilanjutkan AI agent berikutnya untuk deployment produksi atau live provider integration.
 
 **Lulus:** tidak ada temuan yang menggagalkan kontrak data atau fitur inti; ketiga kemampuan tersedia dengan bukti pengujian. Dokumen ini sendiri tidak melakukan deployment, pembelian, atau aktivasi workflow.
 

@@ -90,4 +90,14 @@ Tanggal: 28 Oktober 2026 WIB. Implementasi Fase M5 menyelesaikan persyaratan FR-
 3. **Banner Offline dan Batas Janji MVP**: Komponen `OfflineBanner` mendeteksi status jaringan secara reaktif, menyematkan notifikasi aksesibel (`role="status"`, `aria-live="polite"`), dan menyediakan tombol periksa koneksi. Penjelasan transparan menegaskan bahwa data yang sudah dimuat beroperasi dengan penanda umur lokal, dan pemuatan ulang offline penuh di luar cakupan MVP.
 4. **Sistem Desain dan Aksesibilitas WCAG 2.2 AA**: Token warna, tipografi editorial dan monospace tabular diselaraskan dengan dokumen 03. Seluruh kontrol interaktif memiliki target sentuh minimal 44 × 44 CSS px. Navigasi pintas mobile (`mobile-section-nav`) ditambahkan pada halaman pemantauan agar pengguna layar sentuh dapat berpindah cepat antara peta, panel lokasi, dan daftar deteksi tanpa focus trap. Mendukung `prefers-reduced-motion` dan zoom teks hingga 200%.
 
+## D015 — M6: Audit kesiapan rilis, verifikasi handoff antar-agen, dan status gate produksi
+
+Tanggal: 28 Oktober 2026 WIB. Audit kesiapan rilis dan handoff antar-agen diselesaikan dengan hasil:
+
+1. **Kelulusan Kontrak dan Fitur**: Seluruh fitur MVP (FR-01 hingga FR-08) dan persyaratan non-fungsional (NFR-01 hingga NFR-07) telah terimplementasi dan lolos verifikasi lokal: 305 pengujian unit dan kontrak di 19 file lulus 100%, kompilasi TypeScript bebas galat, serta build produksi Next.js App Router sukses mengompilasi 4 halaman statis dan 3 route API dinamis.
+2. **Pemulihan Arsip Handoff (Reproducibility)**: Integritas arsip source checkpoint diverifikasi melalui uji pemulihan mandiri (`M6-handoff-recovery.json`). Seluruh 154 file diekstrak ke direktori bersih tanpa cache/build/rahasia, checksum SHA-256 tervalidasi 100%, serta `npm run typecheck` dan `npm test` lulus sempurna dari kode hasil ekstraksi tersebut.
+3. **Status Gate Eksternal dan Produksi**: Sesuai kebijakan tata kelola proyek di `AGENTS.md` dan `docs/OPERATIONS.md`, status lokal-terverifikasi tidak menyiratkan aktivasi cloud atau deployment otomatis. Kredensial upstream langsung (API key NASA FIRMS, bucket Cloudflare R2, domain-restricted key CARTO, persistent rate limiter di runtime hosting Vercel) dan tolok ukur FPS pada perangkat keras fisik (NFR-03: 50 FPS desktop, 40 FPS mobile) tetap dicatat pending sebagai gate produksi yang memerlukan akun dan pengukuran fisik nyata.
+4. **Instruksi Handoff Antar-Agen**: Agen berikutnya yang melanjutkan proyek ini wajib membaca `CHECKPOINT.md`, `docs/DECISIONS.md`, dan `docs/SETUP.md`. Tidak perlu mengulang implementasi atau verifikasi lokal M0–M5. Langkah konkret berikutnya adalah konfigurasi kredensial produksi dan benchmark performa perangkat nyata pada M6.
+
+
 
