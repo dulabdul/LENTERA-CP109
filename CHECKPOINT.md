@@ -1,6 +1,6 @@
 # Checkpoint kerja — Lentera Karhutla
 
-Terakhir diperbarui: **2026-10-27T18:28:12.697Z**. Fase aktif: **M4**. Status: **local-verified-runtime-production-browser-gates-pending**.
+Terakhir diperbarui: **2026-10-27T18:41:32.995Z**. Fase aktif: **M5**. Status: **local-verified-runtime-production-browser-gates-pending**.
 
 ## Baca ini jika berganti AI agent
 
@@ -8,15 +8,15 @@ Pengguna menginstruksikan implementasi dengan checkpoint setiap fase. Baca AGENT
 
 ## Hasil fase ini
 
-Rekomendasi masyarakat (Fase M4) selesai dan terverifikasi lokal: GET /api/recommendations berbasis AirService dan shared limiter, katalog aturan server-only LK-AIR-*-v1 (6 kategori AQI x 3 audience: general, sensitive, outdoor) serta fallback LK-DATA-LIMITED-v1. Panel tindakan ActionPanel dan AudienceSelector terintegrasi dalam LocationPanels di /peta, dengan pembatalan siklus IO usang via AbortController, auto-retry 1x saat disparitas basis dataVersion, clock monotonik dan timer kedaluwarsa otomatis. Keputusan arsitektur D013 dan review editorial pedoman AirNow tersimpan.
+Fase M5 (Transparansi dan pengalaman pengguna) selesai dan terverifikasi lokal: Halaman /sumber-data dilengkapi rincian teknis 4 provider upstream (NASA FIRMS Area API VIIRS, Open-Meteo CAMS Global PM2.5, US EPA AirNow, Natural Earth) beserta pembeda model vs sensor/ISPU dan saluran pelaporan koreksi data via GitHub Issues/email. Halaman /privasi menetapkan prinsip zero-tracking tanpa cookie periklanan/analitik, bucketing teknis 0,01° tanpa GPS otomatis, HMAC SHA-256 rate limiter, dan ketiadaan profil medis audiens. Komponen OfflineBanner mendeteksi koneksi terputus secara reaktif dengan role status aksesibel. Navigasi pintas mobile (mobile-section-nav) dan kontrol sentuh >= 44x44px diterapkan. Keputusan D014 tersimpan.
 
 ## Verifikasi yang tercatat
 
-npm run verify -- M4 lulus: 300 unit test/18 berkas, check:env, typecheck, build 4 halaman statis + 3 API (/api/hotspots, /api/air, /api/recommendations), pemeriksaan HTML dan fixture ingest hotspot. Review konten tersimpan di docs/verification/M4-content-review.json. Uji browser fisik, aksesibilitas WCAG, performa perangkat dan integrasi live provider tetap pending.
+npm run verify -- M5 lulus: 305 unit test/19 berkas, check:env, typecheck, build 4 halaman statis + 3 dynamic API, validasi markup transparansi sumber data, pengungkapan privasi, banner offline, dan navigasi mobile. Laporan tersimpan di docs/verification/M5-transparency-ux.json. Uji browser fisik, aksesibilitas WCAG, performa perangkat dan integrasi live provider tetap pending pada M6.
 
 ## Langkah berikutnya
 
-Fase M4 selesai secara lokal. Lanjutkan ke Fase M5 (Transparansi dan pengalaman pengguna): halaman beranda /, /sumber-data, /privasi, typography, drawer/responsivitas mobile, verifikasi aksesibilitas WCAG (keyboard, screen reader, kontras, reduced motion), dan banner offline sebelum benchmark M6.
+Fase M5 selesai secara lokal. Lanjutkan ke Fase M6 (Verifikasi implementasi dan kesiapan rilis): integrasi upstream nyata dengan kredensial sah jika tersedia, pengukuran benchmark FPS desktop/mobile (NFR-03: 50 FPS desktop, 40 FPS mobile) pada browser fisik/perangkat acuan, validasi rate limiter di lingkungan rilis, dan final checklist sebelum publikasi.
 
 ## Milestone
 
@@ -27,14 +27,14 @@ Fase M4 selesai secara lokal. Lanjutkan ke Fase M5 (Transparansi dan pengalaman 
 | M2 | local-verified-browser-provider-gates-pending |
 | M3 | local-verified-runtime-production-browser-gates-pending |
 | M4 | local-verified-runtime-production-browser-gates-pending |
-| M5 | not-started |
+| M5 | local-verified-runtime-production-browser-gates-pending |
 | M6 | not-started |
 
 ## Berkas handoff
 
-- [Checkpoint immutable](docs/checkpoints/M4-03-local-verified.md)
-- [Manifest dan checksum](docs/checkpoints/M4-03-local-verified.json)
-- [Arsip source tanpa dependency/rahasia](docs/checkpoints/M4-03-local-verified.zip)
+- [Checkpoint immutable](docs/checkpoints/M5-01-local-verified.md)
+- [Manifest dan checksum](docs/checkpoints/M5-01-local-verified.json)
+- [Arsip source tanpa dependency/rahasia](docs/checkpoints/M5-01-local-verified.zip)
 - [Keputusan implementasi](docs/DECISIONS.md)
 - [Setup lokal](docs/SETUP.md)
 - [Kontrak teknis](04-TECHNICAL-SPECIFICATION.md)

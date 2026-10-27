@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { OfflineBanner } from "@/components/data/OfflineBanner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,5 +10,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="id"><body><a className="skip-link" href="#main">Langsung ke konten</a><div className="site-shell"><SiteHeader />{children}<SiteFooter /></div></body></html>;
+  return (
+    <html lang="id">
+      <body>
+        <a className="skip-link" href="#main">Langsung ke konten</a>
+        <OfflineBanner />
+        <div className="site-shell">
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </div>
+      </body>
+    </html>
+  );
 }

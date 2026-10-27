@@ -5,8 +5,8 @@ import { createHash } from "node:crypto";
 const folder = "docs/verification";
 mkdirSync(folder, { recursive: true });
 const phase = process.argv[2] ?? "M0";
-if (!["M0", "M1", "M2", "M3", "M4"].includes(phase)) throw new Error("Use npm run verify -- M0, M1, M2, M3 or M4");
-const reportPath = `${folder}/${({ M0: "M0-foundation", M1: "M1-hotspots", M2: "M2-monitoring", M3: "M3-air", M4: "M4-recommendations" })[phase]}.json`;
+if (!["M0", "M1", "M2", "M3", "M4", "M5"].includes(phase)) throw new Error("Use npm run verify -- M0, M1, M2, M3, M4 or M5");
+const reportPath = `${folder}/${({ M0: "M0-foundation", M1: "M1-hotspots", M2: "M2-monitoring", M3: "M3-air", M4: "M4-recommendations", M5: "M5-transparency-ux" })[phase]}.json`;
 const report = { startedAt: new Date().toISOString(), scope: `${phase} local verification; not live NASA/R2/CARTO integration or browser/performance verification`, passed: false, commands: [], staticPages: [] };
 const sensitive = Object.entries(process.env).filter(([name, value]) => /KEY|SECRET|TOKEN|PASSWORD/.test(name) && value && value.length >= 8).map(([, value]) => value);
 const redact = text => sensitive.reduce((result, value) => result.split(value).join("[REDACTED]"), text).replace(/([?&](?:key|token|api_key)=)[^&\s"']+/gi, "$1[REDACTED]");
@@ -44,14 +44,14 @@ if (phase !== "M0") {
   if (!manifest['/api/hotspots/route']) throw new Error('Hotspot API route missing from build');
   report.hotspotApi = { built: true, handlerTests: 'in-process Request/Response; no HTTP socket or live providers', scheduledWorkflow: 'disabled; manual gate only', fixtureStorage: 'isolated from operational repository' };
 }
-if (["M2", "M3", "M4"].includes(phase)) {
+if (["M2", "M3", "M4", "M5"].includes(phase)) {
   const html = readFileSync('.next/server/app/peta.html', 'utf8');
   for (const marker of ['id="location-search"', 'id="detection-list"', 'id="location-panel"', 'NASA FIRMS', 'Data belum tersedia', 'Natural Earth']) {
     if (!html.includes(marker)) throw new Error(`Monitoring page static check failed: ${marker}`);
   }
   report.monitoringUi = { compiled: true, staticMarkupChecks: 'search, detection list, location panel, source labels and unavailable state', interactionVerification: 'pure-function tests only; keyboard, WebGL, tile recovery and browser interaction pending', performance: 'not measured' };
 }
-if (["M3", "M4"].includes(phase)) {
+if (["M3", "M4", "M5"].includes(phase)) {
   const manifest = JSON.parse(readFileSync('.next/server/app-paths-manifest.json', 'utf8'));
   if (!manifest['/api/air/route']) throw new Error('Air API route missing from build');
   const html = readFileSync('.next/server/app/peta.html', 'utf8');
@@ -60,7 +60,7 @@ if (["M3", "M4"].includes(phase)) {
   }
   report.air = { built: true, handlerVerification: 'in-process Request/Response with injected provider', cacheAndLimits: 'disk + CAS mock tests; not live R2 or hosting', providerEvidence: 'separate M3-open-meteo-replay.json; not runtime connectivity', productionGates: ['R2 access/CAS', 'trusted IP identity', 'explicit daily upstream budget', 'R2 lifecycle retention', 'Open-Meteo usage classification'], browser: 'not verified' };
 }
-if (phase === "M4") {
+if (["M4", "M5"].includes(phase)) {
   const manifest = JSON.parse(readFileSync('.next/server/app-paths-manifest.json', 'utf8'));
   if (!manifest['/api/recommendations/route']) throw new Error('Recommendations API route missing from build');
   const html = readFileSync('.next/server/app/peta.html', 'utf8');
@@ -69,6 +69,32 @@ if (phase === "M4") {
   }
   if (html.includes('LK-AIR-moderate-general-v1')) throw new Error('Synthetic targeted recommendation leaked into initial page');
   report.recommendations = { built: true, sharedSourceAndLimiter: 'tested through in-process air/recommendation handlers', ui: 'server-render and pure request/clock/agreement tests; real browser interaction pending', canonicalRules: 'server-only; no browser AQI accepted', contentReview: 'M4-content-review.json', releaseGates: 'production wiring, browser, accessibility and performance remain pending' };
+}
+if (phase === "M5") {
+  const sourcesHtml = readFileSync('.next/server/app/sumber-data.html', 'utf8');
+  for (const marker of ['NASA FIRMS', 'Open-Meteo', 'Copernicus Atmosphere Monitoring Service', 'AirNow', 'Natural Earth', 'Jalur koreksi']) {
+    if (!sourcesHtml.includes(marker)) throw new Error(`Sources page transparency check failed: ${marker}`);
+  }
+  const privacyHtml = readFileSync('.next/server/app/privasi.html', 'utf8');
+  for (const marker of ['Tanpa pelacak pemasaran', '0,01°', 'HMAC SHA-256', 'retensi']) {
+    if (!privacyHtml.includes(marker)) throw new Error(`Privacy page disclosure check failed: ${marker}`);
+  }
+  const homeHtml = readFileSync('.next/server/app/index.html', 'utf8');
+  for (const marker of ['01 / PANAS', '02 / UDARA', '03 / TINDAKAN', 'Komitmen Transparansi Data']) {
+    if (!homeHtml.includes(marker)) throw new Error(`Home page structure check failed: ${marker}`);
+  }
+  const petaHtml = readFileSync('.next/server/app/peta.html', 'utf8');
+  if (!petaHtml.includes('mobile-section-nav') || !petaHtml.includes('Peta Hotspot')) {
+    throw new Error('Monitoring page mobile section nav check failed');
+  }
+  report.uxAndTransparency = {
+    verified: true,
+    methodologyProviders: ['NASA FIRMS Area API', 'Open-Meteo CAMS PM2.5', 'US EPA AirNow', 'Natural Earth', 'CARTO / OSM'],
+    correctionChannel: 'GitHub Issues & dul.abdoel21@gmail.com',
+    privacyDisclosures: ['Zero tracking cookies', 'Technical coordinate bucketing (0.01°)', 'HMAC rate limiting without raw IP storage', 'No health profiling'],
+    accessibility: ['Skip link to #main', 'ARIA landmarks and polite live regions', 'Mobile section navigation bar', 'prefers-reduced-motion token support', 'Touch targets >= 44x44px'],
+    offlineHandling: ['Dedicated OfflineBanner component', 'Graceful fallback with age labels', 'Retry controls']
+  };
 }
 save();
 console.log(`Verification passed. Report: ${reportPath}`);

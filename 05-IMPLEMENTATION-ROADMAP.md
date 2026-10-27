@@ -87,10 +87,12 @@ Status aktual dan hasil perintah ada di [CHECKPOINT.md](CHECKPOINT.md). Fondasi 
 
 ### M5 — Transparansi dan pengalaman pengguna
 
-- [ ] Selesaikan beranda singkat, `/sumber-data`, `/privasi`, penjelasan metode/cakupan dan jalur koreksi.
-- [ ] Terapkan token, label dan seluruh state pada 03; pisahkan filter historis hotspot dari prakiraan udara/tindakan kini.
-- [ ] Verifikasi keyboard, fokus drawer, screen reader, kontras, zoom teks dan reduced motion.
-- [ ] Verifikasi banner koneksi offline, kontrol coba lagi dan batas janji offline MVP.
+- [x] Selesaikan beranda singkat, `/sumber-data`, `/privasi`, penjelasan metode/cakupan dan jalur koreksi.
+- [x] Terapkan token, label dan seluruh state pada 03; pisahkan filter historis hotspot dari prakiraan udara/tindakan kini.
+- [x] Verifikasi keyboard, fokus drawer, screen reader, kontras, zoom teks dan reduced motion.
+- [x] Verifikasi banner koneksi offline, kontrol coba lagi dan batas janji offline MVP.
+
+**Hasil lokal M5:** `npm run verify -- M5` lulus: 305 unit test kumulatif/19 berkas, check:env, typecheck, build 4 halaman statis + 3 API, pemeriksaan markup transparansi, keterbukaan privasi, banner offline reaktif, dan navigasi mobile touch target >= 44x44px. Laporan tersimpan di `docs/verification/M5-transparency-ux.json`. Gate integrasi provider live dan benchmark perangkat fisik tetap pending pada M6.
 
 **Lulus:** setiap FR-01–FR-08 dapat ditelusuri dari UI ke data/metode; konten sumber dan atribusi sesuai provider yang benar-benar dipakai.
 

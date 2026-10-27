@@ -1,0 +1,16 @@
+
+> lentera-karhutla@0.1.0 check:env
+> node --env-file-if-exists=.env.local --import tsx scripts/check-env.ts
+
+{
+  "valid": true,
+  "readiness": {
+    "firms": "not-configured",
+    "r2": "not-configured",
+    "carto": "not-configured",
+    "rateLimiter": "not-configured",
+    "openMeteo": "endpoint-configured-not-tested"
+  },
+  "note": "Configuration presence does not verify provider connectivity. No secret values printed."
+}
+.env.local not found. Continuing without it.
