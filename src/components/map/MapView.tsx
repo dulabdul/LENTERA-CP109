@@ -17,6 +17,7 @@ export function MapView(props: Props) {
     setError(null);
     void import('maplibre-gl').then(lib=>{
       if(disposed||!container.current)return;
+      lib.setWorkerUrl('/maplibre-gl-worker.mjs');
       const style:StyleSpecification={version:8,sources:apiKey?{carto:{type:'raster',tiles:[`https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=${encodeURIComponent(apiKey)}`],tileSize:256,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, © <a href="https://carto.com/attribution/">CARTO</a>'}}:{},layers:[{id:'background',type:'background',paint:{'background-color':'#101923'}},...(apiKey?[{id:'basemap',type:'raster' as const,source:'carto'}]:[])]};
       instance=new lib.Map({container:container.current,style,bounds:[[94.5,-11.2],[141.5,6.5]],fitBoundsOptions:{padding:25},maxBounds:[[90,-18],[148,15]],attributionControl:{compact:false},renderWorldCopies:false});map.current=instance;
       instance.addControl(new lib.NavigationControl({showCompass:false}),'top-right');
