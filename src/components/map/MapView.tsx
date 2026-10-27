@@ -42,7 +42,7 @@ export function MapView(props: Props) {
         reportBounds();
       });
       current.on('moveend',reportBounds);
-      current.on('error',()=>{if(!disposed)setError('Peta dasar atau WebGL mengalami gangguan. Pencarian, daftar deteksi, dan panel data tetap tersedia.');});
+      current.on('error',(e)=>{console.error('MAP_INTERNAL_ERROR:', e?.error ?? e);if(!disposed)setError('Peta dasar atau WebGL mengalami gangguan. Pencarian, daftar deteksi, dan panel data tetap tersedia.');});
       current.on('webglcontextlost',()=>{if(!disposed)setError('WebGL terputus. Gunakan daftar deteksi atau coba muat peta lagi.');});
       // Selection marker is driven by the chosen air location, never a historical hotspot click.
       const updateMarker=()=>{
