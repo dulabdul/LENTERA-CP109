@@ -8,7 +8,6 @@ const publicDir = join(process.cwd(), "public");
 
 mkdirSync(publicDir, { recursive: true });
 
-for (const file of ["maplibre-gl-worker.mjs", "maplibre-gl-shared.mjs"]) {
-  copyFileSync(join(dist, file), join(publicDir, file));
-}
+copyFileSync(join(dist, "maplibre-gl-worker-dev.mjs"), join(publicDir, "maplibre-gl-worker.mjs"));
+copyFileSync(join(dist, "maplibre-gl-shared.mjs"), join(publicDir, "maplibre-gl-shared.mjs"));
 console.log("MapLibre worker assets copied to public/");
