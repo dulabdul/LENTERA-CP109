@@ -1,0 +1,47 @@
+{
+  "name": "lentera-karhutla",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0 <23 || >=24 <25"
+  },
+  "packageManager": "npm@10.9.4",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "typecheck": "node scripts/typecheck.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "import:geography": "node --import tsx scripts/import-geography.ts",
+    "check:env": "node --env-file-if-exists=.env.local --import tsx scripts/check-env.ts",
+    "checkpoint": "node scripts/checkpoint.mjs",
+    "verify": "node scripts/verify.mjs",
+    "ingest:hotspots": "node --env-file-if-exists=.env.local --conditions=react-server --import tsx scripts/ingest-hotspots.ts",
+    "maintain:air": "node --env-file-if-exists=.env.local --conditions=react-server --import tsx scripts/maintain-air.ts",
+    "replay:air": "node --conditions=react-server --import tsx scripts/replay-air.ts"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "maplibre-gl": "6.16.0",
+    "zod": "4.6.7",
+    "@aws-sdk/client-s3": "3.1157.0",
+    "@turf/boolean-point-in-polygon": "7.4.0",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tailwindcss": "4.3.3",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.19.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "vitest": "5.0.5",
+    "tsx": "4.23.15",
+    "shapefile": "0.6.6",
+    "@types/shapefile": "0.6.4"
+  },
+  "type": "module"
+}

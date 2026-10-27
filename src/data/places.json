@@ -1,0 +1,737 @@
+[
+  {
+    "id": "ne-1159149745",
+    "name": "Ambon",
+    "region": "Maluku",
+    "lat": -3.7166866,
+    "lon": 128.2000195
+  },
+  {
+    "id": "ne-1159149801",
+    "name": "Balikpapan",
+    "region": "Kalimantan Timur",
+    "lat": -1.2500154,
+    "lon": 116.8300158
+  },
+  {
+    "id": "ne-1159149763",
+    "name": "Banda Aceh",
+    "region": "Aceh",
+    "lat": 5.5499829,
+    "lon": 95.3200109
+  },
+  {
+    "id": "ne-1159139819",
+    "name": "Bandar Lampung",
+    "region": "Lampung",
+    "lat": -5.4496041,
+    "lon": 105.3000219
+  },
+  {
+    "id": "ne-1159149817",
+    "name": "Bandar Lampung",
+    "region": "Lampung",
+    "lat": -5.4280728,
+    "lon": 105.2680521
+  },
+  {
+    "id": "ne-1159151335",
+    "name": "Bandung",
+    "region": "Jawa Barat",
+    "lat": -6.9480834,
+    "lon": 107.5680667
+  },
+  {
+    "id": "ne-1159150841",
+    "name": "Banjarmasin",
+    "region": "Kalimantan Selatan",
+    "lat": -3.3299918,
+    "lon": 114.5800756
+  },
+  {
+    "id": "ne-1159139841",
+    "name": "Banyuwangi",
+    "region": "Jawa Timur",
+    "lat": -8.1950179,
+    "lon": 114.3695975
+  },
+  {
+    "id": "ne-1159139363",
+    "name": "Baubau",
+    "region": "Sulawesi Tenggara",
+    "lat": -5.4698612,
+    "lon": 122.6163293
+  },
+  {
+    "id": "ne-1159139809",
+    "name": "Bekasi",
+    "region": "Jakarta Raya",
+    "lat": -6.2172575,
+    "lon": 106.972323
+  },
+  {
+    "id": "ne-1159148379",
+    "name": "Bengkulu",
+    "region": "Bengkulu",
+    "lat": -3.8000407,
+    "lon": 102.2699743
+  },
+  {
+    "id": "ne-1159139377",
+    "name": "Biak",
+    "region": "Papua",
+    "lat": -1.1614937,
+    "lon": 136.048481
+  },
+  {
+    "id": "ne-1159139315",
+    "name": "Binjai",
+    "region": "Sumatera Utara",
+    "lat": 3.6203591,
+    "lon": 98.5000752
+  },
+  {
+    "id": "ne-1159139873",
+    "name": "Blitar",
+    "region": "Jawa Timur",
+    "lat": -8.0695992,
+    "lon": 112.1499914
+  },
+  {
+    "id": "ne-1159148377",
+    "name": "Bogor",
+    "region": "Jawa Barat",
+    "lat": -6.5680549,
+    "lon": 106.7480651
+  },
+  {
+    "id": "ne-1159146903",
+    "name": "Bontang",
+    "region": "Kalimantan Timur",
+    "lat": 0.1332593,
+    "lon": 117.5000008
+  },
+  {
+    "id": "ne-1159139337",
+    "name": "Bukittinggi",
+    "region": "Sumatera Barat",
+    "lat": -0.3031482,
+    "lon": 100.3614603
+  },
+  {
+    "id": "ne-1159139775",
+    "name": "Cilacap",
+    "region": "Jawa Tengah",
+    "lat": -7.7188196,
+    "lon": 109.0154024
+  },
+  {
+    "id": "ne-1159148373",
+    "name": "Cirebon",
+    "region": "Jawa Barat",
+    "lat": -6.7332983,
+    "lon": 108.5666442
+  },
+  {
+    "id": "ne-1159139827",
+    "name": "Denpasar",
+    "region": "Bali",
+    "lat": -8.7151125,
+    "lon": 115.1841208
+  },
+  {
+    "id": "ne-1159146905",
+    "name": "Denpasar",
+    "region": "Bali",
+    "lat": -8.6500289,
+    "lon": 115.2199849
+  },
+  {
+    "id": "ne-1159139885",
+    "name": "Ende",
+    "region": "Nusa Tenggara Timur",
+    "lat": -8.8623157,
+    "lon": 121.6489465
+  },
+  {
+    "id": "ne-1159149937",
+    "name": "Gorontalo",
+    "region": "Gorontalo",
+    "lat": 0.549978,
+    "lon": 123.0700484
+  },
+  {
+    "id": "ne-1159139767",
+    "name": "Indramayu",
+    "region": "Jawa Barat",
+    "lat": -6.3356482,
+    "lon": 108.3190108
+  },
+  {
+    "id": "ne-1159151599",
+    "name": "Jakarta",
+    "region": "Jakarta Raya",
+    "lat": -6.1724718,
+    "lon": 106.8274918
+  },
+  {
+    "id": "ne-1159148501",
+    "name": "Jambi",
+    "region": "Jambi",
+    "lat": -1.5899947,
+    "lon": 103.6100476
+  },
+  {
+    "id": "ne-1159149749",
+    "name": "Jayapura",
+    "region": "Papua",
+    "lat": -2.5329862,
+    "lon": 140.69998
+  },
+  {
+    "id": "ne-1159148391",
+    "name": "Jember",
+    "region": "Jawa Timur",
+    "lat": -8.1726937,
+    "lon": 113.6873136
+  },
+  {
+    "id": "ne-1159139867",
+    "name": "Kediri",
+    "region": "Jawa Timur",
+    "lat": -7.7896163,
+    "lon": 112.0000264
+  },
+  {
+    "id": "ne-1159148275",
+    "name": "Kendari",
+    "region": "Sulawesi Tenggara",
+    "lat": -3.9553283,
+    "lon": 122.5973124
+  },
+  {
+    "id": "ne-1159139351",
+    "name": "Kota Masohi",
+    "region": "Maluku",
+    "lat": -3.3281315,
+    "lon": 128.9404911
+  },
+  {
+    "id": "ne-1159139877",
+    "name": "Kota Waingapu",
+    "region": "Nusa Tenggara Timur",
+    "lat": -9.6582361,
+    "lon": 120.253011
+  },
+  {
+    "id": "ne-1159148383",
+    "name": "Kotabumi",
+    "region": "Lampung",
+    "lat": -4.8333109,
+    "lon": 104.8999947
+  },
+  {
+    "id": "ne-1159141537",
+    "name": "Kualakapuas",
+    "region": "Kalimantan Tengah",
+    "lat": -2.983715131744292,
+    "lon": 114.38447569161237
+  },
+  {
+    "id": "ne-1159149823",
+    "name": "Kupang",
+    "region": "Nusa Tenggara Timur",
+    "lat": -10.1786694,
+    "lon": 123.5829886
+  },
+  {
+    "id": "ne-1159148387",
+    "name": "Lahat",
+    "region": "Sumatera Selatan",
+    "lat": -3.8000407,
+    "lon": 103.5333081
+  },
+  {
+    "id": "ne-1159139607",
+    "name": "Langsa",
+    "region": "Aceh",
+    "lat": 4.6735765,
+    "lon": 97.966361
+  },
+  {
+    "id": "ne-1159148309",
+    "name": "Lhokseumawe",
+    "region": "Aceh",
+    "lat": 5.1914002,
+    "lon": 97.1414502
+  },
+  {
+    "id": "ne-1159139369",
+    "name": "Luwuk",
+    "region": "Sulawesi Tengah",
+    "lat": -0.9395951,
+    "lon": 122.7900138
+  },
+  {
+    "id": "ne-1159139863",
+    "name": "Madiun",
+    "region": "Jawa Timur",
+    "lat": -7.634587,
+    "lon": 111.5149914
+  },
+  {
+    "id": "ne-1159139801",
+    "name": "Magelang",
+    "region": "Jawa Tengah",
+    "lat": -7.4695841,
+    "lon": 110.1799825
+  },
+  {
+    "id": "ne-1159139909",
+    "name": "Majene",
+    "region": "Sulawesi Barat",
+    "lat": -3.533597,
+    "lon": 118.9660095
+  },
+  {
+    "id": "ne-1159139891",
+    "name": "Makale",
+    "region": "Sulawesi Selatan",
+    "lat": -3.0968278,
+    "lon": 119.8530871
+  },
+  {
+    "id": "ne-1159150843",
+    "name": "Makassar",
+    "region": "Sulawesi Selatan",
+    "lat": -5.138013,
+    "lon": 119.4300817
+  },
+  {
+    "id": "ne-1159149821",
+    "name": "Malang",
+    "region": "Jawa Timur",
+    "lat": -7.9780464,
+    "lon": 112.6080692
+  },
+  {
+    "id": "ne-1159148271",
+    "name": "Manado",
+    "region": "Sulawesi Utara",
+    "lat": 1.4800246,
+    "lon": 124.8499914
+  },
+  {
+    "id": "ne-1159148503",
+    "name": "Manokwari",
+    "region": "Irian Jaya Barat",
+    "lat": -0.8711238,
+    "lon": 134.0692736
+  },
+  {
+    "id": "ne-1159148393",
+    "name": "Martapura",
+    "region": "Kalimantan Selatan",
+    "lat": -3.413501,
+    "lon": 114.8364941
+  },
+  {
+    "id": "ne-1159139355",
+    "name": "Mataram",
+    "region": "Nusa Tenggara Barat",
+    "lat": -8.5795422,
+    "lon": 116.1350195
+  },
+  {
+    "id": "ne-1159139881",
+    "name": "Maumere",
+    "region": "Nusa Tenggara Timur",
+    "lat": -8.618868,
+    "lon": 122.212323
+  },
+  {
+    "id": "ne-1159151307",
+    "name": "Medan",
+    "region": "Sumatera Utara",
+    "lat": 3.5819198,
+    "lon": 98.6480944
+  },
+  {
+    "id": "ne-1159148283",
+    "name": "Merauke",
+    "region": "Papua",
+    "lat": -8.4931909,
+    "lon": 140.401807
+  },
+  {
+    "id": "ne-1159139859",
+    "name": "Mojokerto",
+    "region": "Jawa Timur",
+    "lat": -7.4695841,
+    "lon": 112.4299743
+  },
+  {
+    "id": "ne-1159148281",
+    "name": "Nabire",
+    "region": "Papua",
+    "lat": -3.3515409,
+    "lon": 135.5134232
+  },
+  {
+    "id": "ne-1159150801",
+    "name": "Padang",
+    "region": "Sumatera Barat",
+    "lat": -0.9580614,
+    "lon": 100.3580675
+  },
+  {
+    "id": "ne-1159139345",
+    "name": "Padang Panjang",
+    "region": "Sumatera Barat",
+    "lat": -0.4495992,
+    "lon": 100.4166508
+  },
+  {
+    "id": "ne-1159139319",
+    "name": "Padang Sidempuan",
+    "region": "Sumatera Utara",
+    "lat": 1.3887382,
+    "lon": 99.2733614
+  },
+  {
+    "id": "ne-1159141541",
+    "name": "Palangkaraya",
+    "region": "Kalimantan Tengah",
+    "lat": -2.2095951,
+    "lon": 113.9099873
+  },
+  {
+    "id": "ne-1159150839",
+    "name": "Palembang",
+    "region": "Sumatera Selatan",
+    "lat": -2.9780932,
+    "lon": 104.7480838
+  },
+  {
+    "id": "ne-1159139895",
+    "name": "Palopo",
+    "region": "Sulawesi Selatan",
+    "lat": -3.0999284,
+    "lon": 120.2363195
+  },
+  {
+    "id": "ne-1159148279",
+    "name": "Palu",
+    "region": "Sulawesi Tengah",
+    "lat": -0.907039,
+    "lon": 119.8330367
+  },
+  {
+    "id": "ne-1159148389",
+    "name": "Pangkal Pinang",
+    "region": "Bangka-Belitung",
+    "lat": -2.0800423,
+    "lon": 106.1500476
+  },
+  {
+    "id": "ne-1159149827",
+    "name": "Parepare",
+    "region": "Sulawesi Selatan",
+    "lat": -4.0166683,
+    "lon": 119.6333073
+  },
+  {
+    "id": "ne-1159139855",
+    "name": "Pasuruan",
+    "region": "Jawa Timur",
+    "lat": -7.6295744,
+    "lon": 112.9000232
+  },
+  {
+    "id": "ne-1159139779",
+    "name": "Pati",
+    "region": "Jawa Tengah",
+    "lat": -6.7415149,
+    "lon": 111.034659
+  },
+  {
+    "id": "ne-1159139785",
+    "name": "Pekalongan",
+    "region": "Jawa Tengah",
+    "lat": -6.8795943,
+    "lon": 109.6700394
+  },
+  {
+    "id": "ne-1159148269",
+    "name": "Pekanbaru",
+    "region": "Riau",
+    "lat": 0.5669101,
+    "lon": 101.4230671
+  },
+  {
+    "id": "ne-1159148267",
+    "name": "Pematangsiantar",
+    "region": "Sumatera Utara",
+    "lat": 2.9614329,
+    "lon": 99.061488
+  },
+  {
+    "id": "ne-1159139903",
+    "name": "Pinrang",
+    "region": "Sulawesi Selatan",
+    "lat": -3.7857263,
+    "lon": 119.6522208
+  },
+  {
+    "id": "ne-1159148381",
+    "name": "Pontianak",
+    "region": "Kalimantan Barat",
+    "lat": -0.0299866,
+    "lon": 109.3199833
+  },
+  {
+    "id": "ne-1159139373",
+    "name": "Poso Kota",
+    "region": "Sulawesi Tengah",
+    "lat": -1.3895935,
+    "lon": 120.7600085
+  },
+  {
+    "id": "ne-1159139823",
+    "name": "Prabumulih",
+    "region": "Sumatera Selatan",
+    "lat": -3.4431632,
+    "lon": 104.2314567
+  },
+  {
+    "id": "ne-1159139359",
+    "name": "Praya",
+    "region": "Nusa Tenggara Barat",
+    "lat": -8.7223242,
+    "lon": 116.2923225
+  },
+  {
+    "id": "ne-1159139849",
+    "name": "Probolinggo",
+    "region": "Jawa Timur",
+    "lat": -7.7496187,
+    "lon": 113.1500337
+  },
+  {
+    "id": "ne-1159149747",
+    "name": "Raba",
+    "region": "Nusa Tenggara Barat",
+    "lat": -8.4499894,
+    "lon": 118.7666418
+  },
+  {
+    "id": "ne-1159148395",
+    "name": "Ruteng",
+    "region": "Nusa Tenggara Timur",
+    "lat": -8.61184,
+    "lon": 120.4698453
+  },
+  {
+    "id": "ne-1159139795",
+    "name": "Salatiga",
+    "region": "Jawa Tengah",
+    "lat": -7.3095422,
+    "lon": 110.4900927
+  },
+  {
+    "id": "ne-1159148327",
+    "name": "Samarinda",
+    "region": "Kalimantan Timur",
+    "lat": -0.5000354,
+    "lon": 117.1499963
+  },
+  {
+    "id": "ne-1159141533",
+    "name": "Sampit",
+    "region": "Kalimantan Tengah",
+    "lat": -2.5329346,
+    "lon": 112.9500459
+  },
+  {
+    "id": "ne-1159139341",
+    "name": "Sawahlunto",
+    "region": "Sumatera Barat",
+    "lat": -0.6662785,
+    "lon": 100.7833467
+  },
+  {
+    "id": "ne-1159150837",
+    "name": "Semarang",
+    "region": "Jawa Tengah",
+    "lat": -6.9646716,
+    "lon": 110.4180736
+  },
+  {
+    "id": "ne-1159139805",
+    "name": "Serang",
+    "region": "Banten",
+    "lat": -6.1099772,
+    "lon": 106.1496342
+  },
+  {
+    "id": "ne-1159148265",
+    "name": "Sibolga",
+    "region": "Sumatera Utara",
+    "lat": 1.7499823,
+    "lon": 98.8000052
+  },
+  {
+    "id": "ne-1159139831",
+    "name": "Singaraja",
+    "region": "Bali",
+    "lat": -8.1151993,
+    "lon": 115.094398
+  },
+  {
+    "id": "ne-1159139813",
+    "name": "Singkawang",
+    "region": "Kalimantan Barat",
+    "lat": 0.9119809,
+    "lon": 108.9654697
+  },
+  {
+    "id": "ne-1159147185",
+    "name": "Sorong",
+    "region": "Irian Jaya Barat",
+    "lat": -0.8554142,
+    "lon": 131.2849991
+  },
+  {
+    "id": "ne-1159139771",
+    "name": "Sukabumi",
+    "region": "Jawa Barat",
+    "lat": -6.9096183,
+    "lon": 106.899976
+  },
+  {
+    "id": "ne-1159139837",
+    "name": "Sumenep",
+    "region": "Jawa Timur",
+    "lat": -7.0049096,
+    "lon": 113.8496293
+  },
+  {
+    "id": "ne-1159141529",
+    "name": "Sungai Penuh",
+    "region": "Jambi",
+    "lat": -2.0631441,
+    "lon": 101.3964359
+  },
+  {
+    "id": "ne-1159151339",
+    "name": "Surabaya",
+    "region": "Jawa Timur",
+    "lat": -7.24729,
+    "lon": 112.7488874
+  },
+  {
+    "id": "ne-1159149815",
+    "name": "Surakarta",
+    "region": "Jawa Tengah",
+    "lat": -7.5649788,
+    "lon": 110.8250077
+  },
+  {
+    "id": "ne-1159149819",
+    "name": "Tanjung Pandan",
+    "region": "Bangka-Belitung",
+    "lat": -2.7500272,
+    "lon": 107.6500077
+  },
+  {
+    "id": "ne-1159140721",
+    "name": "Tanjung Pinang",
+    "region": "Kepulauan Riau",
+    "lat": 0.916829,
+    "lon": 104.471442
+  },
+  {
+    "id": "ne-1159150827",
+    "name": "Tarakan",
+    "region": "Kalimantan Timur",
+    "lat": 3.3000169,
+    "lon": 117.6330159
+  },
+  {
+    "id": "ne-1159139323",
+    "name": "Tarutung",
+    "region": "Sumatera Utara",
+    "lat": 2.017072,
+    "lon": 98.9666617
+  },
+  {
+    "id": "ne-1159148375",
+    "name": "Tasikmalaya",
+    "region": "Jawa Barat",
+    "lat": -7.3254069,
+    "lon": 108.2146761
+  },
+  {
+    "id": "ne-1159139327",
+    "name": "Tebing Tinggi",
+    "region": "Sumatera Utara",
+    "lat": 3.3303768,
+    "lon": 99.1300109
+  },
+  {
+    "id": "ne-1159139791",
+    "name": "Tegal",
+    "region": "Jawa Tengah",
+    "lat": -6.8695691,
+    "lon": 109.1199955
+  },
+  {
+    "id": "ne-1159140725",
+    "name": "Telukbutun",
+    "region": "Kepulauan Riau",
+    "lat": 4.2169894,
+    "lon": 108.2
+  },
+  {
+    "id": "ne-1159149743",
+    "name": "Ternate",
+    "region": "Maluku Utara",
+    "lat": 0.7929606,
+    "lon": 127.3630163
+  },
+  {
+    "id": "ne-1159139333",
+    "name": "Tidore",
+    "region": "Maluku Utara",
+    "lat": 0.6963774,
+    "lon": 127.4359834
+  },
+  {
+    "id": "ne-1159139381",
+    "name": "Timika",
+    "region": "Papua",
+    "lat": -4.5496073,
+    "lon": 136.88998
+  },
+  {
+    "id": "ne-1159139845",
+    "name": "Tuban",
+    "region": "Jawa Timur",
+    "lat": -6.8995414,
+    "lon": 112.0499975
+  },
+  {
+    "id": "ne-1159139899",
+    "name": "Watampone",
+    "region": "Sulawesi Selatan",
+    "lat": -4.5328125,
+    "lon": 120.3333679
+  },
+  {
+    "id": "ne-1159148273",
+    "name": "Yogyakarta City",
+    "region": "Yogyakarta",
+    "lat": -7.7799528,
+    "lon": 110.3750093
+  }
+]

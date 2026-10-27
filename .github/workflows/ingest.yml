@@ -1,0 +1,36 @@
+name: Hotspot ingestion (manual gate)
+# Scheduled operation remains disabled until provider/operations gates are verified.
+# Target schedule after activation:
+#   schedule:
+#     - cron: '7,37 * * * *'
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lentera-hotspots-writer
+  cancel-in-progress: false
+jobs:
+  ingest:
+    if: ${{ vars.ENABLE_HOTSPOT_INGEST == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, resolved 2026-10-28 WIB
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6, resolved 2026-10-28 WIB
+        with:
+          node-version: '22.22.0'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run ingest:hotspots
+        env:
+          FIRMS_MAP_KEY: ${{ secrets.FIRMS_MAP_KEY }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}

@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+coverage/
+.cache/
+.data/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+docs/checkpoints/*.zip
+

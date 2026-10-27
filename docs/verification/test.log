@@ -1,0 +1,13 @@
+
+> lentera-karhutla@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /Users/naoo/P.A.R.A/PROJECTS/cp-lentera-karthula
+
+
+ Test Files  4 passed (4)
+      Tests  72 passed (72)
+   Start at  22:58:30
+   Duration  302ms (import 69%, tests 14%, transform 13%, worker 4%)
+

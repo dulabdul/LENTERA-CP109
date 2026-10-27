@@ -1,0 +1,6 @@
+
+> lentera-karhutla@0.1.0 typecheck
+> node scripts/typecheck.mjs
+
+Generating route types...
+✓ Types generated successfully

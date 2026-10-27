@@ -1,0 +1,10 @@
+{
+  "evaluationTime": "2026-10-27T17:52:47.850Z",
+  "sourceUrl": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=-2.21&longitude=113.92&hourly=pm2_5&domains=cams_global&past_days=2&forecast_days=3&timezone=GMT&timeformat=unixtime",
+  "sha256": "3e17ceb6b153b444c280b23e3a83f195d3416918088ebcda8bc12fc0b5c9212e",
+  "location": {
+    "lat": -2.21,
+    "lon": 113.92
+  },
+  "note": "Public response for a fixed example location, captured via curl. Historical evidence, not a production cache or synthetic fixture."
+}

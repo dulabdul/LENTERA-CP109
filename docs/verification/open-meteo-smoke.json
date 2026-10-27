@@ -1,0 +1,33 @@
+{
+  "observedAt": "2026-10-27T15:54:57.846911+00:00",
+  "kind": "public upstream response shape smoke; not application integration or scientific accuracy validation",
+  "provider": "Open-Meteo CAMS global",
+  "url": "https://air-quality-api.open-meteo.com/v1/air-quality",
+  "sampleLocation": {
+    "lat": -2.21,
+    "lon": 113.92
+  },
+  "gridLocation": {
+    "lat": -2.199997,
+    "lon": 113.899994
+  },
+  "requested": {
+    "hourly": "pm2_5",
+    "domains": "cams_global",
+    "past_days": 2,
+    "forecast_days": 3,
+    "timezone": "GMT",
+    "timeformat": "unixtime"
+  },
+  "sampleCount": 120,
+  "nonNullSamples": 120,
+  "units": {
+    "time": "unixtime",
+    "pm2_5": "μg/m³"
+  },
+  "firstValidAt": "2026-10-25T00:00:00+00:00",
+  "lastValidAt": "2026-10-29T23:00:00+00:00",
+  "bodySha256": "1fc36e367dfbac84710d322d7556921312b7b806bb4c1fb8ed739da1e86fbb08",
+  "passed": true,
+  "modelRunReported": false
+}

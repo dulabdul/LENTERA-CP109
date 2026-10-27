@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-10-27T15:42:26.978Z",
+  "provider": "Natural Earth",
+  "license": "Public domain",
+  "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "scale": "1:10,000,000",
+  "note": "Batas indikatif yang digeneralisasi; bukan batas hukum atau daftar desa lengkap.",
+  "transformation": "Select ADM0_A3=IDN. Keep original country geometry; retain only place name/region/coordinates/NE_ID. No geometry simplification or invented coordinates.",
+  "country": {
+    "version": "5.1.1",
+    "url": "https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_countries.zip",
+    "archiveSha256": "ce1ac7036499a0edd641fbc093cd209a98f96a49d2eca8480aaacad35138a7f6",
+    "output": "indonesia.json",
+    "outputSha256": "1b5111d9a6f76c541f8770d27618a52c19bf68ab965ed2ff6b9ef8f7c0ff05bb",
+    "featureCount": 1
+  },
+  "places": {
+    "version": "5.1.2",
+    "url": "https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_populated_places.zip",
+    "archiveSha256": "cd149186f03d2603e0410da399b980a4357d0ac32d3a2305a49ed3dffcc41d7b",
+    "output": "places.json",
+    "outputSha256": "12ea4605c5f6640c89b1fc6979137b0d6aa5c6de318e82efc91b71c537bb98eb",
+    "featureCount": 105
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "recordedAt": "2026-10-27T13:38:15.988401+00:00",
+  "target": "https://www.mandumrimba.org/en",
+  "method": [
+    "public documentation",
+    "public GitHub source inspection",
+    "direct HTTP GET"
+  ],
+  "reaMcpAvailable": false,
+  "browserInteractionVerified": false,
+  "browserLimitation": "Headless Chrome launch terminated with SIGABRT; no successful browser observations or screenshots.",
+  "currentPublicRepositoryCommit": "e3ce3a5d24981664dbfac6390418bc28135189ed",
+  "existingLocalCheckoutCommit": "8538be08fecaeefa98c84f951dd06e100d0569c6",
+  "sourceFingerprints": [
+    {
+      "path": "DATA-FLOW.md",
+      "localBlobSha": "f2d7256b9ae6600ce6c50657172073829bf38c2b",
+      "remoteBlobSha": "f2d7256b9ae6600ce6c50657172073829bf38c2b",
+      "match": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "localBlobSha": "952bce82abe82828c81930c5b7b8cd0b6dddf539",
+      "remoteBlobSha": "952bce82abe82828c81930c5b7b8cd0b6dddf539",
+      "match": true
+    },
+    {
+      "path": "apps/api/package.json",
+      "localBlobSha": "db042b4bc82a6088ee321d0c828451fdc5a72cea",
+      "remoteBlobSha": "db042b4bc82a6088ee321d0c828451fdc5a72cea",
+      "match": true
+    },
+    {
+      "path": "apps/web/next.config.mjs",
+      "localBlobSha": "64ee9fdf2a71ffb381caa20d40a59465b7c4be4f",
+      "remoteBlobSha": "64ee9fdf2a71ffb381caa20d40a59465b7c4be4f",
+      "match": true
+    },
+    {
+      "path": "apps/api/src/api/fires.controller.ts",
+      "localBlobSha": "1dc990b2c2ec9fb95b69a638879d9fb9c0c68809",
+      "remoteBlobSha": "1dc990b2c2ec9fb95b69a638879d9fb9c0c68809",
+      "match": true
+    },
+    {
+      "path": "apps/web/src/app/api/fires/route.ts",
+      "localBlobSha": "17e6173987698aee10cbd0d003f0a604a0a66e33",
+      "remoteBlobSha": "17e6173987698aee10cbd0d003f0a604a0a66e33",
+      "match": true
+    },
+    {
+      "path": "apps/web/src/lib/layers.ts",
+      "localBlobSha": "84740c16259e70c94b838c7afdeafef835b144fb",
+      "remoteBlobSha": "84740c16259e70c94b838c7afdeafef835b144fb",
+      "match": true
+    },
+    {
+      "path": "apps/web/src/components/map/AirField.tsx",
+      "localBlobSha": "1e8a826682e8b1425f11d27ad01e14d11c3f77f6",
+      "remoteBlobSha": "1e8a826682e8b1425f11d27ad01e14d11c3f77f6",
+      "match": true
+    },
+    {
+      "path": "apps/web/src/components/map/MapView.tsx",
+      "localBlobSha": "3940660b2274924a32fed6477d709654d17d7f4d",
+      "remoteBlobSha": "3940660b2274924a32fed6477d709654d17d7f4d",
+      "match": true
+    },
+    {
+      "path": "apps/web/src/lib/air-field.ts",
+      "localBlobSha": "94118ae39a867344b4b3e2c5e23ebffcabcd14db",
+      "remoteBlobSha": "94118ae39a867344b4b3e2c5e23ebffcabcd14db",
+      "match": true
+    },
+    {
+      "path": "scripts/air-field/build_air_field.py",
+      "localBlobSha": "52678c9a63fdde11cb54c1a11143103dfe8d2cf2",
+      "remoteBlobSha": "52678c9a63fdde11cb54c1a11143103dfe8d2cf2",
+      "match": true
+    },
+    {
+      "path": "modal_air.py",
+      "localBlobSha": "42420343769887d2f24db258a3d7da75164b9c0e",
+      "remoteBlobSha": "42420343769887d2f24db258a3d7da75164b9c0e",
+      "match": true
+    },
+    {
+      "path": "modal_app.py",
+      "localBlobSha": "388203c630939a01c52f9b237d64e40469eb2c06",
+      "remoteBlobSha": "388203c630939a01c52f9b237d64e40469eb2c06",
+      "match": true
+    },
+    {
+      "path": "packages/shared/src/aqi.ts",
+      "localBlobSha": "908cc234507d61dcef70354e23d9ef76dfc713c8",
+      "remoteBlobSha": "908cc234507d61dcef70354e23d9ef76dfc713c8",
+      "match": true
+    }
+  ],
+  "mapPage": {
+    "url": "https://www.mandumrimba.org/en/map",
+    "headers": {
+      "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+      "content-type": "text/html; charset=utf-8",
+      "date": "Tue, 27 Oct 2026 13:32:53 GMT",
+      "server": "Vercel",
+      "x-matched-path": "/[locale]/peta",
+      "x-powered-by": "Next.js",
+      "x-vercel-cache": "MISS"
+    }
+  },
+  "fires": {
+    "url": "https://www.mandumrimba.org/api/fires",
+    "headers": {
+      "cache-control": "public, s-maxage=3600, stale-while-revalidate=86400",
+      "content-type": "application/json",
+      "date": "Tue, 27 Oct 2026 13:36:17 GMT",
+      "server": "Vercel",
+      "x-fires": "ok-4417",
+      "x-matched-path": "/api/fires",
+      "x-vercel-cache": "PRERENDER",
+      "content-length": "806236"
+    },
+    "recordCount": 4417,
+    "acquisitionDates": {
+      "2026-10-20": 4417
+    },
+    "confidence": {
+      "nominal": 4290,
+      "low": 51,
+      "high": 76
+    },
+    "payloadBytes": 806236,
+    "payloadSha256": "7209ed0a953805905bac15e7680ee795e1e1d63a4a7dd7925ed43ebf3d723ffb",
+    "limitation": "Single HTTP snapshot; records are dated 2026-10-20 despite retrieval on 2026-10-27. Counts are detections, not independent confirmed fire incidents; bbox is not a national boundary.",
+    "archivedResponse": "fires-response.geojson.gz"
+  },
+  "airIndex": {
+    "url": "https://www.mandumrimba.org/air/index.json",
+    "headers": {
+      "cache-control": "public, max-age=60",
+      "content-type": "application/json",
+      "date": "Tue, 27 Oct 2026 13:34:49 GMT",
+      "last-modified": "Tue, 27 Oct 2026 11:09:21 GMT",
+      "server": "Vercel",
+      "x-vercel-cache": "MISS"
+    },
+    "metadata": {
+      "bbox": [
+        60.0,
+        -50.0,
+        180.0,
+        60.0
+      ],
+      "pm": {
+        "nx": 301,
+        "ny": 276,
+        "step": 0.4
+      },
+      "wind": {
+        "nx": 49,
+        "ny": 45,
+        "step": 2.5
+      },
+      "times": [
+        "2026-10-27T09:00",
+        "2026-10-27T10:00",
+        "2026-10-27T11:00",
+        "2026-10-27T12:00",
+        "2026-10-27T13:00",
+        "2026-10-27T14:00",
+        "2026-10-27T15:00",
+        "2026-10-27T16:00",
+        "2026-10-27T17:00",
+        "2026-10-27T18:00",
+        "2026-10-27T19:00",
+        "2026-10-27T20:00",
+        "2026-10-27T21:00",
+        "2026-10-27T22:00",
+        "2026-10-27T23:00",
+        "2026-10-28T00:00",
+        "2026-10-28T01:00",
+        "2026-10-28T02:00",
+        "2026-10-28T03:00",
+        "2026-10-28T04:00",
+        "2026-10-28T05:00",
+        "2026-10-28T06:00",
+        "2026-10-28T07:00",
+        "2026-10-28T08:00",
+        "2026-10-28T09:00",
+        "2026-10-28T10:00",
+        "2026-10-28T11:00",
+        "2026-10-28T12:00",
+        "2026-10-28T13:00",
+        "2026-10-28T14:00",
+        "2026-10-28T15:00",
+        "2026-10-28T16:00",
+        "2026-10-28T17:00",
+        "2026-10-28T18:00",
+        "2026-10-28T19:00",
+        "2026-10-28T20:00",
+        "2026-10-28T21:00",
+        "2026-10-28T22:00",
+        "2026-10-28T23:00",
+        "2026-10-29T00:00",
+        "2026-10-29T01:00",
+        "2026-10-29T02:00",
+        "2026-10-29T03:00",
+        "2026-10-29T04:00",
+        "2026-10-29T05:00",
+        "2026-10-29T06:00",
+        "2026-10-29T07:00",
+        "2026-10-29T08:00",
+        "2026-10-29T09:00",
+        "2026-10-29T10:00",
+        "2026-10-29T11:00"
+      ],
+      "steps": "air/t/3404e4ee0ee9",
+      "source": "cams-ads",
+      "runAt": "2026-10-27T00:00",
+      "stepHours": 1,
+      "attribution": "PM2.5: Copernicus Atmosphere Monitoring Service (CAMS). Angin 10 m: NOAA GFS. Keduanya via Copernicus ADS / Open-Meteo, hasil model, bukan pengukuran darat.",
+      "generatedAt": "2026-10-27T11:09:20.464829+00:00"
+    },
+    "archivedResponse": "air-index-response.json"
+  },
+  "airStep": {
+    "url": "https://www.mandumrimba.org/air/t/3404e4ee0ee9/2026-10-27T13%3A00.json",
+    "arrayLengths": {
+      "pm25": 83076,
+      "u": 2205,
+      "v": 2205
+    },
+    "shapeMatchesIndex": true
+  },
+  "upstreamChecks": [
+    {
+      "request": "invalid",
+      "endpoint": "https://air-quality-api.open-meteo.com/v1/air-quality",
+      "requestedCoordinates": {
+        "latitude": -2.21,
+        "longitude": 113.92
+      },
+      "hourlyUnits": {
+        "time": "iso8601",
+        "pm2_5": "μg/m³",
+        "wind_speed_10m": "undefined",
+        "wind_direction_10m": "undefined"
+      },
+      "hourlyArrays": {
+        "pm2_5": {
+          "total": 24,
+          "nonNull": 24
+        },
+        "wind_speed_10m": {
+          "total": 24,
+          "nonNull": 0
+        },
+        "wind_direction_10m": {
+          "total": 24,
+          "nonNull": 0
+        }
+      }
+    },
+    {
+      "request": "wind",
+      "endpoint": "https://api.open-meteo.com/v1/forecast",
+      "requestedCoordinates": {
+        "latitude": -2.21,
+        "longitude": 113.92
+      },
+      "hourlyUnits": {
+        "time": "iso8601",
+        "wind_speed_10m": "m/s",
+        "wind_direction_10m": "°"
+      },
+      "hourlyArrays": {
+        "wind_speed_10m": {
+          "total": 24,
+          "nonNull": 24
+        },
+        "wind_direction_10m": {
+          "total": 24,
+          "nonNull": 24
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Source main and deployed build are not proven identical.",
+    "Successful HTTP fetch does not establish successful map rendering, FPS, or end-to-end feature behavior.",
+    "No provider secrets, infrastructure account settings, or private database contents inspected."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-27T17:59:39.629414+00:00",
+  "checkpoint": "M3-05-local-verified",
+  "passed": true,
+  "scope": "Source recovery with existing node_modules symlink; not a clean install, live runtime/provider, production hosting or browser test.",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "archiveSha256": "19d8f9a0cc30dffd85f34a634798b79b55851a1d59d8909618a2fa9dc9a4b552",
+  "sourceChecksumsVerified": 125,
+  "workflowIncluded": true,
+  "secretDependencyBuildDataExclusions": true,
+  "finishedAt": "2026-10-27T17:59:44.390598+00:00"
+}

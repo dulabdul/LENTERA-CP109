@@ -1,0 +1,157 @@
+{
+  "verifiedAt": "2026-10-27T15:56:02.556327+00:00",
+  "scope": "Documentation only; no application build, integration, deployment or medical validation performed.",
+  "passed": true,
+  "documents": {
+    "README.md": "1835304eb346ea97466e28837df4cdd6d52c994a9d04ff6fe021e7765dd3ef73",
+    "01-PRODUCT-REQUIREMENTS.md": "33348a9b4131b9acad6449a3186d2fb781ea043647a31aad136f6167efa3408c",
+    "02-ARCHITECTURE-DESIGN.md": "9b5f10e7c3ea9f81116ec84dc9c7bc1ae921d6571fe18a9cd93a10080818168b",
+    "03-UI-UX-DESIGN-SYSTEM.md": "ba3bb075fc4a0882b95910f6beeefa5eb19d92eb0371f1c64ebf4447f6a61269",
+    "04-TECHNICAL-SPECIFICATION.md": "9ce93ef07dfe2d201af0a84ca0892eabce6bb48cddc69ff34be757f336f9e8e1",
+    "05-IMPLEMENTATION-ROADMAP.md": "ee4be0967f0a0c1cc136dabf0ae6fccd232514c4d9575d8f1982b4be66823a6c",
+    "06-MANDUM-RIMBA-ANALYSIS.md": "d7f61833b0dd0530353c8ae207912466b27e81c3c304003a08a42866bd3f3ceb",
+    "07-DOCUMENT-ALIGNMENT-AUDIT.md": "31d025ce165ac0f089d2608284974ba10efa1e30f6bad37fc4bc637301b648ff"
+  },
+  "checks": [
+    {
+      "check": "Local links, table columns and code fences",
+      "passed": true,
+      "details": {
+        "localLinks": 55,
+        "tables": 21,
+        "problems": []
+      }
+    },
+    {
+      "check": "Eight product requirements defined",
+      "passed": true,
+      "details": [
+        "FR-01",
+        "FR-02",
+        "FR-03",
+        "FR-04",
+        "FR-05",
+        "FR-06",
+        "FR-07",
+        "FR-08"
+      ]
+    },
+    {
+      "check": "Twenty verification scenarios present",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Obsolete active contracts removed",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "Canonical routes exist in specification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Performance targets agree",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Rule audience and data states declared",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "AQI example and breakpoint arithmetic",
+      "passed": true,
+      "details": {
+        "examples": 16,
+        "constant24Samples22": 75
+      }
+    },
+    {
+      "check": "Six AQI badge text/background contrast pairs",
+      "passed": true,
+      "details": [
+        {
+          "colors": [
+            "#00E400",
+            "#000000"
+          ],
+          "ratio": 12.097
+        },
+        {
+          "colors": [
+            "#FFFF00",
+            "#000000"
+          ],
+          "ratio": 19.556
+        },
+        {
+          "colors": [
+            "#FF7E00",
+            "#000000"
+          ],
+          "ratio": 8.236
+        },
+        {
+          "colors": [
+            "#FF0000",
+            "#000000"
+          ],
+          "ratio": 5.252
+        },
+        {
+          "colors": [
+            "#8F3F97",
+            "#FFFFFF"
+          ],
+          "ratio": 6.314
+        },
+        {
+          "colors": [
+            "#7E0023",
+            "#FFFFFF"
+          ],
+          "ratio": 10.987
+        }
+      ]
+    },
+    {
+      "check": "Control border contrast against panel background",
+      "passed": true,
+      "details": {
+        "colors": [
+          "#697889",
+          "#111720"
+        ],
+        "ratio": 3.982
+      }
+    },
+    {
+      "check": "Original eight documents archived with matching checksums",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Reference response evidence remains consistent",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "primaryDocumentationConsulted": [
+    "https://firms.modaps.eosdis.nasa.gov/api/area/",
+    "https://open-meteo.com/en/docs/air-quality-api",
+    "https://open-meteo.com/en/terms",
+    "https://www.carto.com/basemaps/apikey/index.html",
+    "https://www.naturalearthdata.com/about/terms-of-use/",
+    "https://www.epa.gov/system/files/documents/2024-02/pm-naaqs-air-quality-index-fact-sheet.pdf",
+    "https://aqs.epa.gov/aqsweb/documents/codetables/aqi_breakpoints.html",
+    "https://www.airnow.gov/sites/default/files/2023-03/air-quality-guide-for-particle-pollution_0.pdf",
+    "https://nextjs.org/support-policy",
+    "https://developers.cloudflare.com/r2/api/s3/api/",
+    "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule",
+    "https://vercel.com/docs/cron-jobs/usage-and-pricing",
+    "https://www.w3.org/TR/WCAG22/"
+  ]
+}

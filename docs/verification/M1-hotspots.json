@@ -1,0 +1,121 @@
+{
+  "startedAt": "2026-10-27T17:26:37.008Z",
+  "scope": "M1 local verification; not live NASA/R2/CARTO integration or browser/performance verification",
+  "passed": true,
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "check:env"
+      ],
+      "exitCode": 0,
+      "durationMs": 299,
+      "log": "M1-run-check_env.log"
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exitCode": 0,
+      "durationMs": 1127,
+      "log": "M1-test.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "durationMs": 1945,
+      "log": "M1-run-typecheck.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "durationMs": 10774,
+      "log": "M1-run-build.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "ingest:hotspots",
+        "--",
+        "--fixture"
+      ],
+      "exitCode": 0,
+      "durationMs": 392,
+      "log": "M1-run-ingest_hotspots------fixture.log"
+    }
+  ],
+  "staticPages": [
+    {
+      "file": "index.html",
+      "bytes": 147113,
+      "sha256": "af44e44334cab108282ed192ca305244af3a9f1a9eeae87834988f062dfb00c6",
+      "checks": [
+        "lang-id",
+        "main-landmark",
+        "source-link",
+        "no-known-secret-values"
+      ]
+    },
+    {
+      "file": "peta.html",
+      "bytes": 113897,
+      "sha256": "f3042e016ff31844f0e81ec619f3a4ef1b72fbba34c0adf46d1b22ff11824879",
+      "checks": [
+        "lang-id",
+        "main-landmark",
+        "source-link",
+        "no-known-secret-values"
+      ]
+    },
+    {
+      "file": "privasi.html",
+      "bytes": 9800,
+      "sha256": "984a51fc28c38dc0e1f6c5038dc5f555d54e733087349b2077b02a2ddf7a3456",
+      "checks": [
+        "lang-id",
+        "main-landmark",
+        "source-link",
+        "no-known-secret-values"
+      ]
+    },
+    {
+      "file": "sumber-data.html",
+      "bytes": 12573,
+      "sha256": "d446bdea8e7763e285d94bd2f5f411bd42c8588e290188b916d60220eec4dd6e",
+      "checks": [
+        "lang-id",
+        "main-landmark",
+        "source-link",
+        "no-known-secret-values"
+      ]
+    }
+  ],
+  "finishedAt": "2026-10-27T17:26:51.551Z",
+  "browserPreview": {
+    "verified": false,
+    "reason": "Sandbox denied listening on 127.0.0.1:3100 (EPERM). Static build artifacts checked instead; no FPS or browser interaction claim."
+  },
+  "providerAccess": {
+    "firms": "pending",
+    "r2": "pending",
+    "carto": "pending",
+    "rateLimiter": "pending"
+  },
+  "hotspotApi": {
+    "built": true,
+    "handlerTests": "in-process Request/Response; no HTTP socket or live providers",
+    "scheduledWorkflow": "disabled; manual gate only",
+    "fixtureStorage": "isolated from operational repository"
+  }
+}

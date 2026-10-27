@@ -1,0 +1,103 @@
+{
+  "startedAt": "2026-10-27T15:58:29.737Z",
+  "scope": "M0 local foundation; not live NASA/R2/CARTO integration or browser/performance verification",
+  "passed": true,
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "check:env"
+      ],
+      "exitCode": 0,
+      "durationMs": 273,
+      "log": "run-check:env.log"
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exitCode": 0,
+      "durationMs": 716,
+      "log": "test.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "durationMs": 1666,
+      "log": "run-typecheck.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "durationMs": 8455,
+      "log": "run-build.log"
+    }
+  ],
+  "staticPages": [
+    {
+      "file": "index.html",
+      "bytes": 147113,
+      "sha256": "8932c5d2f639d4a4c515c25be6f26124c3614dc0f33c7e1735b74d8647c8b6a0",
+      "checks": [
+        "lang-id",
+        "main-landmark",
+        "source-link",
+        "no-known-secret-values"
+      ]
+    },
+    {
+      "file": "peta.html",
+      "bytes": 113897,
+      "sha256": "d7fe0ec45c0f88baecf0bea890f1a9014ef06fd53eed0a4e20c166a612ffdcf0",
+      "checks": [
+        "lang-id",
+        "main-landmark",
+        "source-link",
+        "no-known-secret-values"
+      ]
+    },
+    {
+      "file": "privasi.html",
+      "bytes": 9800,
+      "sha256": "e556146a43a035ca2c07150fced6d89c136fac14d91a8bb6df124eeef60e8f48",
+      "checks": [
+        "lang-id",
+        "main-landmark",
+        "source-link",
+        "no-known-secret-values"
+      ]
+    },
+    {
+      "file": "sumber-data.html",
+      "bytes": 12573,
+      "sha256": "842702db9620f3df5c42abbc35709920016c5e1eebbedca4dbd174a1e497d97b",
+      "checks": [
+        "lang-id",
+        "main-landmark",
+        "source-link",
+        "no-known-secret-values"
+      ]
+    }
+  ],
+  "finishedAt": "2026-10-27T15:58:40.850Z",
+  "browserPreview": {
+    "verified": false,
+    "reason": "Sandbox denied listening on 127.0.0.1:3100 (EPERM). Static build artifacts checked instead; no FPS or browser interaction claim."
+  },
+  "providerAccess": {
+    "firms": "pending",
+    "r2": "pending",
+    "carto": "pending",
+    "rateLimiter": "pending"
+  }
+}
