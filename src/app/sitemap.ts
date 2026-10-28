@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lentera-karhutla.id';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cp-109.panel-arvello.space';
   const now = new Date();
 
   return [

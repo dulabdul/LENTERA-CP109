@@ -34,6 +34,7 @@
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "server-only": "0.0.1",
+    "tsx": "4.23.15",
     "zod": "4.6.7"
   },
   "devDependencies": {
@@ -44,7 +45,6 @@
     "@types/shapefile": "0.6.4",
     "shapefile": "0.6.6",
     "tailwindcss": "4.3.3",
-    "tsx": "4.23.15",
     "typescript": "5.9.3",
     "vitest": "5.0.5"
   },

@@ -8,7 +8,7 @@ import "./ui-redesign.css";
 import "./hero.css";
 import "./public-themes.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lentera-karhutla.id";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://cp-109.panel-arvello.space";
 
 export const viewport: Viewport = {
   themeColor: [

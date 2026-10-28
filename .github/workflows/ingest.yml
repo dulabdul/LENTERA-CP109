@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '22.22.0'
           cache: npm
-      - run: npm ci --ignore-scripts
+      - run: npm ci --ignore-scripts --include=dev
       - run: npm run ingest:hotspots
         env:
           FIRMS_MAP_KEY: ${{ secrets.FIRMS_MAP_KEY }}
