@@ -16,8 +16,10 @@ export function AirPanel({ location, resource }: { location: Location | null; re
   return <section className="air-panel" aria-label="Udara pada lokasi">
     <p className="eyebrow">UDARA PADA LOKASI</p><h2>PM2.5 model CAMS</h2>
     <DataStatus state={response?.meta.state ?? 'unavailable'}>{loading ? 'Memperbarui data udara…' : !location ? 'Pilih tempat, koordinat, atau titik pada peta.' : retryAfter > 0 ? `Permintaan dibatasi. Coba lagi dalam ${retryAfter} detik.` : failed ? 'Pembaruan gagal; periksa koneksi atau coba lagi.' : 'Open-Meteo · CAMS global'}</DataStatus>
+    <div className="air-metric"><p className="metric-label">KONSENTRASI PM2.5 / JAM KINI MODEL</p>
     <p className="air-value">{data?.current?.pm25UgM3?.toLocaleString('id-ID', { maximumFractionDigits: 1 }) ?? '—'} <span>µg/m³</span></p>
     {data?.current ? <p className="field-help">Jam kini model: {formatWib(data.current.validAt)}{response?.meta.state === 'stale' && ' · Data lama/fallback'}</p> : <p className="field-help">Nilai belum tersedia; tidak diganti dengan nol.</p>}
+    </div>
     {location && <button onClick={refresh} disabled={loading || retryAfter > 0}>{loading ? 'Memuat…' : 'Perbarui udara'}</button>}
     {data && <>
       <AqiBadge aqi={data.aqi}/>

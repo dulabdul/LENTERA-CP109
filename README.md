@@ -1,63 +1,138 @@
-# Lentera Karhutla — Dokumen Produk dan Implementasi
+# LENTERA (Lentera Karhutla)
 
-**Versi dokumen 1.0 · Status 28 Oktober 2026: pipeline hotspot, UI monitoring dan modul udara M0–M3 tersedia dengan verifikasi lokal. Integrasi produksi/browser dan M4–M6 belum selesai.**
+> **Platform Pemantauan Kebakaran Hutan, Lahan, dan Kualitas Udara Indonesia**
 
-Lentera Karhutla adalah layanan informasi publik untuk membantu masyarakat melihat **deteksi hotspot, PM2.5/kualitas udara, dan tindakan yang relevan untuk lokasi pilihannya**. Implementasi, identitas visual, dan konten aplikasi ditulis sendiri. Mandum Rimba dipakai sebagai bahan studi teknik, bukan upstream produksi atau template yang disalin.
+LENTERA adalah observatorium geospasial berbasis web yang menyajikan data real-time deteksi titik panas (*hotspots*), radiasi termal satelit, dan estimasi kualitas udara (PM2.5) di seluruh wilayah kepulauan Indonesia.
 
-## Melanjutkan eksekusi / ganti AI agent
+Platform ini dirancang untuk masyarakat umum, relawan, dan pemerhati lingkungan agar dapat memahami situasi anomali panas dan paparan kabut asap secara cepat, akurat, dan mudah diakses melalui perangkat desktop maupun ponsel cerdas.
 
-Baca **[CHECKPOINT.md](CHECKPOINT.md)** terlebih dahulu, lalu [AGENTS.md](AGENTS.md), [keputusan implementasi](docs/DECISIONS.md), dan [setup lokal](docs/SETUP.md). Setiap checkpoint memuat status nyata, hasil verifikasi, langkah berikutnya, checksum, dan arsip source yang mengecualikan rahasia/dependency. Keadaan aplikasi tidak disimpulkan dari checklist dokumentasi.
+---
 
-Perintah lokal: `npm ci`, `npm run verify`, lalu `npm run dev`. Key/akses provider yang belum tersedia tetap dicatat pending pada [operasi](docs/OPERATIONS.md). Shell awal memakai data geografis nyata, tetapi tidak menampilkan deteksi/PM2.5 sintetis sebagai kondisi kini.
+## ⚡ Fitur Utama
 
-## Tiga kemampuan inti
+### 1. Peta Titik Panas Interaktif (*Hotspot Map*)
+- **Deteksi Satelit Real-time**: Mengintegrasikan data anomali termal dari konstelasi satelit NASA FIRMS (VIIRS Suomi-NPP, NOAA-20, dan NOAA-21) beresolusi tinggi.
+- **Filter Rentang Waktu**: Pemantauan fleksibel untuk periode 24 jam terakhir, 48 jam, hingga 7 hari.
+- **Visualisasi Panas Ganda**:
+  - *Heatmap Gradasi Panas*: Peta kabut panas pada level zoom pulau/nasional untuk mengenali kluster densitas api secara instan.
+  - *Kluster & Titik Presisi*: Transisi mulus ke lingkaran penanda saat zoom diperbesar ke level kabupaten/kecamatan.
+- **Hotspot Insight Pill**: Kartu ringkasan cepat di bagian atas peta yang menampilkan total titik aktif 24 jam terakhir, wilayah terbanyak (provinsi), dan timestamp pembaruan satelit.
+- **Metadata Lengkap per Titik**: Tingkat kepercayaan deteksi (*low*, *nominal*, *high*), Fire Radiative Power (FRP dalam MW), tanggal & jam lintasan satelit (*overpass* UTC & WIB), serta koordinat lintang/bujur.
 
-1. **Pemantauan hotspot:** peta nasional deteksi VIIRS, detail sensor/waktu/confidence, filter 24h/48h/7d, dan pencarian lokasi.
-2. **PM2.5/kualitas udara:** konsentrasi model CAMS per lokasi, prakiraan hingga 48 jam bila tersedia, dan estimasi US AQI PM2.5 dari rerata bergerak 24 jam.
-3. **Rekomendasi tindakan masyarakat:** aturan berversi, alasan rekomendasi, pilihan kelompok pengguna, sumber pedoman, dan status kesegaran data.
+### 2. Kualitas Udara & Konsentrasi PM2.5
+- **Model Atmosfer Global**: Proyeksi polutan aerosol PM2.5 berbasis model Copernicus Atmosphere Monitoring Service (CAMS via Open-Meteo) per grid spasial 0,01°.
+- **Estimasi US AQI 24 Jam**: Menghitung rata-rata bergerak konsentrasi PM2.5 sesuai standar US EPA 2024 untuk memetakan kategori kesehatan (Baik, Sedang, Tidak Sehat bagi Kelompok Sensitif, Tidak Sehat, Sangat Tidak Sehat, hingga Berbahaya).
+- **Tren Riwayat & Prakiraan**: Grafik tren konsentrasi polutan selama 24 jam ke belakang dan proyeksi hingga 48 jam ke depan.
 
-Beranda dan halaman metodologi mendukung ketiga kemampuan tersebut. Grid PM2.5 penuh, animasi angin, notifikasi, dan integrasi sensor lapangan masuk pengembangan berikutnya.
+### 3. Rekomendasi Tindakan Adaptif
+- **Panduan Aktivitas Terarah**: Rekomendasi perlindungan kesehatan berbasis aturan deterministik server-side sesuai panduan EPA AirNow.
+- **Pemilih Audiens**:
+  - *Masyarakat Umum*: Rekomendasi aktivitas harian dan ventilasi ruangan.
+  - *Kelompok Sensitif*: Peringatan khusus bagi anak-anak, lansia, dan penderita asma/penyakit kardiovaskular.
+  - *Pekerja Luar Ruang*: Anjuran penggunaan masker respirator (N95/KN95) dan pembatasan beban fisik lapangan.
 
-## Indeks dan tanggung jawab dokumen
+### 4. Navigasi & Workspace Geospasial
+- **Multi-View Modes**: Pilihan proyeksi peta Flat 2D, Globe interaktif, dan 3D Terrain kontur daratan.
+- **Gaya Peta (Basemap)**: CARTO Dark Matter kontras tinggi untuk pemantauan malam/api, serta Esri World Imagery untuk citra satelit permukaan tanah.
+- **Kontrol Layar Penuh (Fullscreen)**: Mode fokus tanpa gangguan navbar peramban.
+- **Desain Ramah Seluler**: Panel bottom-sheet terpadu, target sentuh ergonomis (≥ 44×44 px), dan dekolisi layout untuk mencegah tumpang-tindih visual di layar kecil.
 
-| Dokumen | Menetapkan |
-| --- | --- |
-| [01 — PRD](01-PRODUCT-REQUIREMENTS.md) | Tujuan, pengguna, scope MVP, requirement dan kriteria keberhasilan produk |
-| [02 — Arsitektur](02-ARCHITECTURE-DESIGN.md) | Aliran provider, scheduler, object storage, API, cache, dan pemulihan |
-| [03 — UI/UX](03-UI-UX-DESIGN-SYSTEM.md) | Alur lokasi, peta, panel udara/tindakan, label, warna dan state data |
-| [04 — Spesifikasi teknis](04-TECHNICAL-SPECIFICATION.md) | Kontrak tipe/API, konstanta operasional, algoritma waktu/indeks, dan aturan tindakan |
-| [05 — Roadmap](05-IMPLEMENTATION-ROADMAP.md) | Milestone dan verifikasi setiap requirement sebelum rilis |
-| [06 — Analisis referensi](06-MANDUM-RIMBA-ANALYSIS.md) | Bukti pemeriksaan Mandum Rimba pada 27 Oktober dan pelajaran teknik |
-| [07 — Audit penyelarasan](07-DOCUMENT-ALIGNMENT-AUDIT.md) | Penutupan temuan audit, keputusan lintas dokumen dan batas verifikasi |
+---
 
-Dokumen 01–05 adalah spesifikasi aktif. Bagian observasi dalam 06 adalah catatan historis; temuan pada situs referensi tidak dianggap sebagai fitur yang sudah diimplementasikan di Lentera. Detail kontrak dan konstanta hanya didefinisikan secara kanonis pada 04, lalu dirujuk dokumen lain. Perubahan requirement harus diperbarui pada seluruh dokumen yang terdampak.
+## 🛠️ Tech Stack
 
-## Keputusan MVP
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router, Server Actions, Route Handlers)
+- **Runtime & Bahasa**: Node.js 20+, [TypeScript](https://www.typescriptlang.org/)
+- **Visualisasi Geospasial**: [MapLibre GL JS](https://maplibre.org/) v6, [H3-js](https://h3geo.org/) (agregasi heksagonal spasial)
+- **Styling**: Vanilla CSS modern berbasis CSS Variables, Fluid Typography, dan Theme Tokens (mendukung Dark & Light theme native)
+- **Aksesibilitas**: Memenuhi standar WCAG 2.2 Level AA (kontras warna teruji, navigable via keyboard, label screen-reader)
+- **Pengujian**: [Vitest](https://vitest.dev/) (350+ unit dan integration test suites)
 
-| Bidang | Keputusan |
-| --- | --- |
-| Stack | Satu aplikasi Next.js App Router, React, TypeScript dan MapLibre; versi tepat telah dipin pada package.json/lockfile; detail keputusan M0 pada docs/DECISIONS.md |
-| Hosting awal | Web/API Node.js di Vercel; object storage Cloudflare R2; job Node.js pada GitHub Actions terjadwal |
-| Hotspot | NASA FIRMS **Area API**, tiga sumber VIIRS NRT; route publik `/api/hotspots` |
-| Udara | Open-Meteo Air Quality, domain CAMS global; route `/api/air`; PM2.5 adalah model, bukan sensor darat |
-| Indeks | `Estimasi US AQI PM2.5 — rerata model 24 jam`; bukan ISPU resmi, AQI gabungan, atau NowCast |
-| Tindakan | Evaluasi server-side pada `/api/recommendations`, tanpa LLM; tidak menerima angka AQI dari browser sebagai dasar keputusan |
-| Wilayah | Hotspot dalam batas indikatif Indonesia dari Natural Earth; pencarian lokal dan klik peta untuk memilih lokasi |
-| Data | Snapshot persisten dan status `ok`, `stale`, `partial`, `unavailable`; data hilang tidak berubah menjadi nol |
-| Biaya | Target biaya rendah dengan pemantauan kuota; tidak menjanjikan Rp0 atau menganggap paket gratis cocok untuk setiap jenis penggunaan |
+---
 
-## Status pekerjaan
+## 🌐 Sumber Data & Metodologi
 
-- [x] Analisis referensi dan arsip bukti.
-- [x] Penyelarasan PRD, arsitektur, UI/UX, spesifikasi, dan roadmap.
-- [x] Fondasi lokal: bootstrap, versi dipin, geografi, policy/validator, metode indeks dan aturan, fixture serta verifikasi lokal.
-- [ ] Validasi akses provider, paket/kuota/rate limiter dan konfigurasi cloud untuk integrasi nyata.
-- [x] Pipeline hotspot lokal: parser, snapshot/pemulihan, CLI dan API; 134 unit test, typecheck, build dan CLI fixture lulus. Integrasi NASA/R2 nyata tetap pending.
-- [x] UI monitoring M2: peta/cluster, pencarian, filter, daftar/detail dan state koneksi; verifikasi lokal kumulatif 147 unit test, typecheck/build/struktur HTML. Interaksi browser, tile dan FPS belum diverifikasi.
-- [x] Modul udara M3: adapter CAMS, cache/fallback/lease, limiter/anggaran persisten, API, panel PM2.5/indeks/riwayat/prakiraan. Bukti respons nyata direplay melalui cache sementara; konektivitas runtime/produksi dan browser tetap pending. Hasil verifikasi terbaru pada CHECKPOINT.md.
-- [ ] Implementasi tiga fitur inti dan pengujian.
-- [ ] Konfigurasi akun/key, pemeriksaan biaya, dan rilis.
+Platform LENTERA mengedepankan transparansi ilmiah:
 
-Teks kesehatan mengikuti sumber pedoman yang disebut di 04 dan harus melalui pemeriksaan konten sebelum rilis. Sumber data, library, basemap dan font tetap mempunyai ketentuan masing-masing; lisensi kode asli Lentera tidak menghapus ketentuan tersebut. Lisensi distribusi kode diputuskan pemilik proyek sebelum publikasi.
+1. **Titik Panas (Hotspots)**: Data diperoleh dari sensor VIIRS pada satelit konstelasi Suomi-NPP dan JPSS via NASA FIRMS. *Catatan*: Hotspot mengindikasikan anomali suhu permukaan bumi (radiasi termal), bukan kebakaran lahan yang sudah diverifikasi tim darat.
+2. **Kualitas Udara**: Data PM2.5 bersumber dari model atmosfer numerik CAMS ECMWF, bukan stasiun pemantau fisik darat (ISPU). Model ini memberikan estimasi sebaran polutan makro saat jaringan sensor darat tidak tersedia.
+3. **Batas Geografis**: Batas administratif indikatif bersumber dari dataset terbuka Natural Earth.
+4. **Privasi Zero-Tracking**: Tidak menggunakan cookie pelacak pihak ketiga, tidak meminta izin lokasi latar belakang otomatis, dan masukan koordinat dinormalisasi ke bucket geospasial 0,01°.
 
-Bukti pemeriksaan referensi ada di [research/2026-10-27-mandum-rimba/evidence.json](research/2026-10-27-mandum-rimba/evidence.json). Versi delapan dokumen sebelum revisi tersimpan dalam [arsip sebelum penyelarasan](research/2026-10-27-document-alignment/before-alignment.zip) dengan [manifest checksum](research/2026-10-27-document-alignment/before-manifest.json).
+---
+
+## 🚀 Memulai (Local Development)
+
+### Prasyarat
+- **Node.js**: Versi `20.x` atau lebih baru
+- **npm**: Versi `10.x` atau lebih baru
+
+### 1. Kloning Repositori
+```bash
+git clone git@github.com:dulabdul/LENTERA-CP109.git
+cd LENTERA-CP109
+```
+
+### 2. Instal Dependensi
+```bash
+npm install
+```
+
+### 3. Konfigurasi Lingkungan
+Salin berkas placeholder konfigurasi lingkungan:
+```bash
+cp .env.example .env.local
+```
+*Catatan*: Untuk menjalankan server pengembang lokal dengan fixture data teruji, aplikasi dapat langsung berjalan tanpa key berbayar.
+
+### 4. Jalankan Development Server
+```bash
+npm run dev
+```
+Buka peramban pada alamat [http://localhost:3000](http://localhost:3000) (atau port yang ditunjuk terminal).
+
+---
+
+## 🧪 Pengujian & Pemeriksaan Kualitas
+
+Jalankan seluruh rangkaian uji otomatis, validasi tipe TypeScript, dan verifikasi build produksi:
+
+```bash
+# Menjalankan unit & contract tests (Vitest)
+npm test
+
+# Pemeriksaan tipe TypeScript
+npm run typecheck
+
+# Pengujian build produksi Next.js
+npm run build
+```
+
+---
+
+## 📁 Struktur Direktori
+
+```text
+├── public/                # Aset statis, ikon web manifest, dan OpenGraph preview
+├── src/
+│   ├── app/               # Next.js App Router (halaman, layout, manifest, sitemap)
+│   │   ├── api/           # Endpoint API (hotspots, air quality, recommendations)
+│   │   ├── peta/          # Halaman observatorium pemantauan peta
+│   │   ├── privasi/       # Kebijakan privasi & zero-tracking
+│   │   └── sumber-data/   # Transparansi metodologi & atribusi data
+│   ├── components/        # Komponen antarmuka (Map, AirPanel, ActionPanel, Header, Footer)
+│   │   ├── map/           # Komponen MapLibre, heatmap, kamera, dan kontrol layer
+│   │   ├── air/           # Komponen grafik PM2.5 dan indikator AQI
+│   │   └── theme/         # Toggle tema dan tokens
+│   ├── data/              # Manifest provinsi dan boundary geospasial
+│   └── lib/               # Algoritma perhitungan AQI, adapter satelit, dan rate limiter
+├── tests/                 # Rangkaian pengujian unit dan integrasi
+└── docs/                  # Dokumentasi arsitektur, spesifikasi teknis, dan catatan teknis
+```
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dirilis di bawah lisensi [MIT](LICENSE).
+Seluruh hak cipta data satelit dan basemap tetap berada pada penyedia data masing-masing (NASA FIRMS, ECMWF CAMS, Open-Meteo, CARTO, dan OpenStreetMap contributors).

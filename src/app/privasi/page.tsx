@@ -2,8 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Kebijakan privasi",
-  description: "Kebijakan privasi Lentera Karhutla: tanpa pelacak pemasaran, tanpa geolokasi otomatis, dan tanpa profil kesehatan pengguna.",
+  title: "Kebijakan Privasi & Zero-Tracking",
+  description:
+    "Kebijakan privasi Lentera Karhutla: tanpa pelacak pemasaran pihak ketiga, tanpa geolokasi otomatis latar belakang, dan tanpa profil kesehatan individu.",
+  alternates: {
+    canonical: "/privasi",
+  },
+  openGraph: {
+    title: "Kebijakan Privasi & Zero-Tracking | LENTERA",
+    description:
+      "Prinsip perlindungan privasi tanpa pelacakan lokasi latar belakang, tanpa cookie pihak ketiga, dan perlindungan privasi penuh.",
+    url: "/privasi",
+  },
 };
 
 export default function PrivacyPage() {
@@ -69,6 +79,10 @@ export default function PrivacyPage() {
 
       <section>
         <h2>6. Penyimpanan cache dan retensi data</h2>
+        <p>
+          Pilihan mode terang atau gelap disimpan secara lokal di browser Anda agar tetap sama saat berpindah halaman atau memuat ulang.
+          Preferensi tampilan ini tidak dikirim sebagai profil pengguna ke server. Jika penyimpanan browser diblokir, pilihan tema tetap dapat digunakan selama halaman terbuka.
+        </p>
         <p>
           Cache seri kualitas udara disimpan secara internal selama 24 jam untuk membatasi beban ke upstream provider dan memastikan ketersediaan data saat terjadi lonjakan trafik. Data yang berumur lebih dari 6 jam tidak lagi disajikan sebagai kondisi kini.
         </p>

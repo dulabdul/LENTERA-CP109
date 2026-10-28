@@ -1,6 +1,0 @@
-
-> lentera-karhutla@0.1.0 ingest:hotspots
-> node --env-file-if-exists=.env.local --conditions=react-server --import tsx scripts/ingest-hotspots.ts --fixture
-
-{"synthetic":true,"status":"published","snapshotId":"d3aed01ad99a3c6a201adcf2721836c65b845d908a62c1c096bc23552c681a70","detectionsCount":3,"batches":[{"source":"VIIRS_SNPP_NRT","startDate":"2026-10-20","days":5,"status":"complete","invalidRows":0,"recordsCount":0},{"source":"VIIRS_SNPP_NRT","startDate":"2026-10-25","days":3,"status":"complete","invalidRows":0,"recordsCount":1},{"source":"VIIRS_NOAA20_NRT","startDate":"2026-10-20","days":5,"status":"complete","invalidRows":0,"recordsCount":0},{"source":"VIIRS_NOAA20_NRT","startDate":"2026-10-25","days":3,"status":"complete","invalidRows":0,"recordsCount":1},{"source":"VIIRS_NOAA21_NRT","startDate":"2026-10-20","days":5,"status":"complete","invalidRows":0,"recordsCount":0},{"source":"VIIRS_NOAA21_NRT","startDate":"2026-10-25","days":3,"status":"complete","invalidRows":0,"recordsCount":1}],"pruned":0,"retention":"ok"}
-.env.local not found. Continuing without it.

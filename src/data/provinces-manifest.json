@@ -1,0 +1,554 @@
+{
+  "provider": "Deny Herianto / community dataset",
+  "title": "Indonesia GeoJSON & TopoJSON Maps (38 Provinces)",
+  "version": "1.0.0",
+  "commit": "80aa4a90ac7eef5136eaa2b551b6aa5d198be27d",
+  "snapshotDate": "2025-12-18",
+  "surveyDate": null,
+  "source": "https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces",
+  "downloadUrl": "https://raw.githubusercontent.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces/80aa4a90ac7eef5136eaa2b551b6aa5d198be27d/GeoJSON/indonesia-38-provinces.geojson",
+  "license": "CC BY 4.0 (dataset publisher declaration)",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "licenseDeclaration": "https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces/blob/80aa4a90ac7eef5136eaa2b551b6aa5d198be27d/DATA_LICENSE.md",
+  "upstreamLineage": "Not documented by the publisher; not independently established",
+  "indicative": true,
+  "note": "38 bentuk wilayah dari dataset komunitas 2025; digeneralisasi, bukan batas hukum/otoritatif terkini. Asal survei geometri tidak dijelaskan penerbit.",
+  "transformation": "Geometry/properties bytes preserved. Publisher shape ids are internal: KODE_PROV repeats for new Papua shapes and is not used as an official identifier. Catalog derives bounds and label centers from largest polygon bbox; labels are cartographic hints, not administrative capitals.",
+  "sha256": "97f23f738c7aa66836b971d76381c009a34c6aaefe9c982e85f060e678402027",
+  "bytes": 253643,
+  "featureCount": 38,
+  "catalog": [
+    {
+      "id": "11",
+      "name": "Aceh",
+      "bounds": [
+        95.1935458,
+        2.0553612,
+        98.2872156,
+        5.9071293
+      ],
+      "label": [
+        96.7403807,
+        3.9130602999999997
+      ]
+    },
+    {
+      "id": "51",
+      "name": "Bali",
+      "bounds": [
+        114.4388141,
+        -8.8489332,
+        115.710434,
+        -8.0616236
+      ],
+      "label": [
+        115.07462405000001,
+        -8.455278400000001
+      ]
+    },
+    {
+      "id": "36",
+      "name": "Banten",
+      "bounds": [
+        105.120705,
+        -6.9784542,
+        106.7798648,
+        -5.8910147
+      ],
+      "label": [
+        106.00513484999999,
+        -6.4347344500000005
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Bengkulu",
+      "bounds": [
+        101.0223953,
+        -5.4854949,
+        103.7904851,
+        -2.2886666
+      ],
+      "label": [
+        102.40644019999999,
+        -3.6055259
+      ]
+    },
+    {
+      "id": "34",
+      "name": "Daerah Istimewa Yogyakarta",
+      "bounds": [
+        110.0035245,
+        -8.2030535,
+        110.8349345,
+        -7.5411639
+      ],
+      "label": [
+        110.4192295,
+        -7.8721087
+      ]
+    },
+    {
+      "id": "31",
+      "name": "DKI Jakarta",
+      "bounds": [
+        106.6868148,
+        -6.3503045,
+        106.9700348,
+        -6.0895646
+      ],
+      "label": [
+        106.8284248,
+        -6.21993455
+      ]
+    },
+    {
+      "id": "75",
+      "name": "Gorontalo",
+      "bounds": [
+        121.1656735,
+        0.3202621,
+        123.5332133,
+        1.0386317
+      ],
+      "label": [
+        122.3494434,
+        0.6794469000000001
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Jambi",
+      "bounds": [
+        101.1345453,
+        -2.7685163,
+        104.490995,
+        -0.7316974
+      ],
+      "label": [
+        102.81277015,
+        -1.7501068499999999
+      ]
+    },
+    {
+      "id": "32",
+      "name": "Jawa Barat",
+      "bounds": [
+        106.3705848,
+        -7.8182837,
+        108.8308146,
+        -5.9206047
+      ],
+      "label": [
+        107.6006997,
+        -6.8694442
+      ]
+    },
+    {
+      "id": "33",
+      "name": "Jawa Tengah",
+      "bounds": [
+        108.5565647,
+        -8.2112535,
+        111.6913944,
+        -6.4044045
+      ],
+      "label": [
+        110.12397955,
+        -7.307829
+      ]
+    },
+    {
+      "id": "35",
+      "name": "Jawa Timur",
+      "bounds": [
+        110.9000944,
+        -8.7504433,
+        115.901764,
+        -5.7370548
+      ],
+      "label": [
+        112.74772425,
+        -7.7523088
+      ]
+    },
+    {
+      "id": "61",
+      "name": "Kalimantan Barat",
+      "bounds": [
+        108.7993146,
+        -3.0291862,
+        114.2055242,
+        2.0649712
+      ],
+      "label": [
+        111.5230794,
+        -0.4821074999999999
+      ]
+    },
+    {
+      "id": "63",
+      "name": "Kalimantan Selatan",
+      "bounds": [
+        114.3520441,
+        -4.1746556,
+        116.5552739,
+        -1.3125771
+      ],
+      "label": [
+        115.453659,
+        -2.74361635
+      ]
+    },
+    {
+      "id": "62",
+      "name": "Kalimantan Tengah",
+      "bounds": [
+        110.7332145,
+        -3.5390059,
+        115.841994,
+        0.7316619
+      ],
+      "label": [
+        113.28760425,
+        -1.4036719999999998
+      ]
+    },
+    {
+      "id": "64",
+      "name": "Kalimantan Timur",
+      "bounds": [
+        113.8418342,
+        -2.4088365,
+        118.9865337,
+        2.564701
+      ],
+      "label": [
+        116.41418395,
+        0.07793224999999993
+      ]
+    },
+    {
+      "id": "65",
+      "name": "Kalimantan Utara",
+      "bounds": [
+        114.5651641,
+        1.1178817,
+        117.9882338,
+        4.39153
+      ],
+      "label": [
+        116.27669895,
+        2.75470585
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Kepulauan Bangka Belitung",
+      "bounds": [
+        105.108715,
+        -3.2714261,
+        108.2941547,
+        -1.501797
+      ],
+      "label": [
+        105.97463490000001,
+        -2.30755155
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Kepulauan Riau",
+      "bounds": [
+        103.3276851,
+        -0.6838874,
+        109.1166146,
+        4.2304801
+      ],
+      "label": [
+        108.1880647,
+        3.93198025
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Lampung",
+      "bounds": [
+        103.5959951,
+        -5.9430547,
+        105.9127849,
+        -3.7325958
+      ],
+      "label": [
+        104.75439,
+        -4.83782525
+      ]
+    },
+    {
+      "id": "81",
+      "name": "Maluku",
+      "bounds": [
+        125.8074131,
+        -8.3446635,
+        134.8738023,
+        -2.7738763
+      ],
+      "label": [
+        129.35996785,
+        -3.32198605
+      ]
+    },
+    {
+      "id": "82",
+      "name": "Maluku Utara",
+      "bounds": [
+        124.3373433,
+        -2.4408965,
+        128.8687629,
+        2.6451909
+      ],
+      "label": [
+        128.13863795,
+        0.6538769499999999
+      ]
+    },
+    {
+      "id": "52",
+      "name": "Nusa Tenggara Barat",
+      "bounds": [
+        115.823544,
+        -9.1042331,
+        119.1844637,
+        -8.0800536
+      ],
+      "label": [
+        117.96182379999999,
+        -8.59214335
+      ]
+    },
+    {
+      "id": "53",
+      "name": "Nusa Tenggara Timur",
+      "bounds": [
+        118.9272737,
+        -10.9301722,
+        125.1809232,
+        -8.0634536
+      ],
+      "label": [
+        121.40945855000001,
+        -8.5099384
+      ]
+    },
+    {
+      "id": "91-A",
+      "name": "Papua",
+      "bounds": [
+        134.7943923,
+        -4.1142356,
+        141.0013218,
+        -0.6301874
+      ],
+      "label": [
+        138.50635699999998,
+        -2.7860563
+      ]
+    },
+    {
+      "id": "92-A",
+      "name": "Papua Barat",
+      "bounds": [
+        131.9514026,
+        -4.2524556,
+        135.1977623,
+        -0.7199074
+      ],
+      "label": [
+        133.57458244999998,
+        -2.4861815000000003
+      ]
+    },
+    {
+      "id": "92-B",
+      "name": "Papua Barat Daya",
+      "bounds": [
+        129.7303728,
+        -2.2836766,
+        133.4858325,
+        -0.0061177
+      ],
+      "label": [
+        132.2155326,
+        -1.3140820500000001
+      ]
+    },
+    {
+      "id": "91-B",
+      "name": "Papua Pegunungan",
+      "bounds": [
+        137.7336421,
+        -5.344435,
+        141.0012418,
+        -2.9373662
+      ],
+      "label": [
+        139.36744195,
+        -4.1409006
+      ]
+    },
+    {
+      "id": "91-C",
+      "name": "Papua Selatan",
+      "bounds": [
+        137.6405721,
+        -9.1255431,
+        141.0200418,
+        -4.5667954
+      ],
+      "label": [
+        139.34894194999998,
+        -6.84616925
+      ]
+    },
+    {
+      "id": "91-D",
+      "name": "Papua Tengah",
+      "bounds": [
+        134.5855024,
+        -5.2176851,
+        138.353942,
+        -2.7058563
+      ],
+      "label": [
+        136.46972219999998,
+        -3.9617706999999998
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Riau",
+      "bounds": [
+        100.0534354,
+        -1.1241972,
+        103.8090451,
+        2.547681
+      ],
+      "label": [
+        101.93124025,
+        0.7117418999999999
+      ]
+    },
+    {
+      "id": "76",
+      "name": "Sulawesi Barat",
+      "bounds": [
+        118.7572438,
+        -3.5631259,
+        119.8719637,
+        -0.8495073
+      ],
+      "label": [
+        119.31460375,
+        -2.2063166
+      ]
+    },
+    {
+      "id": "73",
+      "name": "Sulawesi Selatan",
+      "bounds": [
+        119.3541737,
+        -7.397394,
+        121.7841435,
+        -1.9479967
+      ],
+      "label": [
+        120.56915860000001,
+        -3.82539075
+      ]
+    },
+    {
+      "id": "72",
+      "name": "Sulawesi Tengah",
+      "bounds": [
+        119.4275137,
+        -3.6115559,
+        123.6125233,
+        1.3557416
+      ],
+      "label": [
+        121.4329685,
+        -0.95856725
+      ]
+    },
+    {
+      "id": "74",
+      "name": "Sulawesi Tenggara",
+      "bounds": [
+        120.8645036,
+        -5.7781248,
+        123.9959933,
+        -2.7732863
+      ],
+      "label": [
+        121.8781385,
+        -3.83302075
+      ]
+    },
+    {
+      "id": "71",
+      "name": "Sulawesi Utara",
+      "bounds": [
+        123.1214934,
+        0.3202621,
+        126.911183,
+        4.54358
+      ],
+      "label": [
+        124.1754233,
+        1.03429675
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Sumatera Barat",
+      "bounds": [
+        98.5965155,
+        -3.347086,
+        101.8838552,
+        0.8905218
+      ],
+      "label": [
+        100.52550535,
+        -0.7939623499999999
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Sumatera Selatan",
+      "bounds": [
+        102.0638852,
+        -4.9174452,
+        106.0967449,
+        -1.6292569
+      ],
+      "label": [
+        104.08031505,
+        -3.27335105
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Sumatera Utara",
+      "bounds": [
+        97.0589157,
+        -0.5464574,
+        100.4344554,
+        4.2899201
+      ],
+      "label": [
+        99.1174805,
+        2.25904615
+      ]
+    }
+  ]
+}

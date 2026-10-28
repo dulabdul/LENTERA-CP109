@@ -9,5 +9,10 @@ coverage/
 !.env.example
 *.tsbuildinfo
 .DS_Store
-docs/checkpoints/*.zip
 
+# Internal documentation, implementation plans, checkpoints, and research
+docs/
+research/
+design-reference/
+*.md
+!README.md

@@ -1,14 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { DataStatus } from "@/components/data/DataStatus";
-import { indonesiaPreviewPaths } from "@/lib/geography";
+import { HeroMapIllustration } from "@/components/public/HeroMapIllustration";
+
+export const metadata: Metadata = {
+  title: "LENTERA — Mengenali Panas, Memahami Udara",
+  description:
+    "Platform pemantauan lingkungan karhutla Indonesia. Pantau anomali radiasi termal satelit NASA VIIRS, estimasi sebaran PM2.5 24 jam, dan panduan mitigasi kesehatan udara.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (
-    <main id="main">
-      <section className="hero">
+    <main id="main" className="home-page">
+      <section className="hero hero-observatory" aria-labelledby="hero-heading">
         <div className="hero-copy">
-          <p className="eyebrow">INDONESIA / OBSERVATORIUM LINGKUNGAN</p>
-          <h1>
+          <p className="eyebrow"><span aria-hidden="true" />PEMANTAUAN LINGKUNGAN INDONESIA</p>
+          <h1 id="hero-heading">
             Mengenali panas.<br />
             <em>Memahami udara.</em>
           </h1>
@@ -20,35 +30,15 @@ export default function Home() {
               Pantau lokasi sekarang <span aria-hidden="true">↗</span>
             </Link>
             <Link className="secondary-link" href="/sumber-data">
-              Pelajari metodologi ↗
+              Pelajari metodologi <span aria-hidden="true">↗</span>
             </Link>
           </div>
           <p className="quiet-note">
-            Sumber terbuka. Waktu data transparan. Tanpa klaim yang melampaui bukti ilmiah.
+            Sumber Data Terbuka.
           </p>
         </div>
 
-        <div className="geography-preview">
-          <div className="map-caption">
-            <span>KEPULAUAN INDONESIA</span>
-            <span>94,5° E — 141,5° E</span>
-          </div>
-          <svg viewBox="0 0 1000 430" role="img" aria-label="Gambaran batas indikatif kepulauan Indonesia, tanpa data deteksi hotspot">
-            <defs>
-              <pattern id="grid" width="100" height="86" patternUnits="userSpaceOnUse">
-                <path d="M100 0H0V86" fill="none" stroke="#344050" strokeWidth="0.7" />
-              </pattern>
-            </defs>
-            <rect width="1000" height="430" fill="url(#grid)" />
-            {indonesiaPreviewPaths().map((path, index) => (
-              <path key={index} d={path} fill="#344737" stroke="#7F9B80" strokeWidth="0.7" />
-            ))}
-          </svg>
-          <div className="map-caption">
-            <span>BATAS INDIKATIF · NATURAL EARTH</span>
-            <span>Konteks geografis kepulauan, tanpa data kondisi kini</span>
-          </div>
-        </div>
+        <HeroMapIllustration />
       </section>
 
       <section className="availability" aria-label="Status ketersediaan layanan">
@@ -57,6 +47,7 @@ export default function Home() {
         </DataStatus>
       </section>
 
+      <div className="overview-heading"><p className="eyebrow">TIGA PILAR / SATU KONTEKS</p><h2>Informasi yang saling melengkapi.</h2></div>
       <section className="feature-list" aria-label="Tiga pilar informasi Lentera Karhutla">
         <article>
           <span className="feature-number">01 / PANAS</span>

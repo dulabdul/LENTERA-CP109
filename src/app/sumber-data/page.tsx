@@ -4,21 +4,40 @@ import { geographyManifest } from "@/lib/geography";
 import { ACTION_SOURCE } from "@/lib/actions";
 
 export const metadata: Metadata = {
-  title: "Sumber data dan metode",
-  description: "Penjelasan lengkap sumber data, metodologi estimasi indeks, aturan tindakan, batasan teknis, dan jalur koreksi Lentera Karhutla.",
+  title: "Metodologi & Sumber Data Terbuka",
+  description:
+    "Penjelasan lengkap transparansi sumber data satelit NASA FIRMS VIIRS, model atmosferik PM2.5 CAMS ECMWF, breakpoint EPA 2024, batas indikatif Natural Earth, dan prosedur koreksi publik.",
+  alternates: {
+    canonical: "/sumber-data",
+  },
+  openGraph: {
+    title: "Metodologi & Sumber Data Terbuka | LENTERA",
+    description:
+      "Transparansi sumber data satelit NASA FIRMS, model kualitas udara CAMS, formula US EPA 2024, dan tata kelola keterbukaan data LENTERA.",
+    url: "/sumber-data",
+  },
 };
 
 export default function SourcesPage() {
   return (
-    <main id="main" className="page-section prose">
+    <main id="main" className="page-section prose sources-page">
       <p className="eyebrow">SUMBER & METODE</p>
       <h1 className="page-title">
         Setiap angka<br />
         <em>memerlukan konteks.</em>
       </h1>
       <p className="lead-paragraph">
-        Lentera Karhutla berpegang pada prinsip transparansi: menyajikan data lingkungan publik tanpa mengaburkan sumber, waktu pengambilan, atau keterbatasan metode. Data ditampilkan sesuai ketersediaan nyata dari penyedia resmi; tidak ada data sintetis yang diklaim sebagai kondisi lapangan.
+        Lentera Karhutla berpegang pada prinsip transparansi: menyajikan data lingkungan publik tanpa mengaburkan sumber, waktu pengambilan, atau keterbatasan metode. Data ditampilkan sesuai ketersediaan nyata dari penyedia yang disebutkan, termasuk data batas komunitas beratribusi; tidak ada data sintetis yang diklaim sebagai kondisi lapangan.
       </p>
+
+      <nav className="source-index" aria-label="Daftar metode dan sumber">
+        <a href="#hotspot-methodology"><span>01</span> NASA FIRMS ↘</a>
+        <a href="#air-methodology"><span>02</span> Open-Meteo / CAMS ↘</a>
+        <a href="#recommendations-methodology"><span>03</span> Pedoman AirNow ↘</a>
+        <a href="#geography-methodology"><span>04</span> Geografi & peta ↘</a>
+        <a href="#state-methodology"><span>05</span> Status data ↘</a>
+        <a href="#correction-channel"><span>06</span> Jalur koreksi ↘</a>
+      </nav>
 
       <section id="hotspot-methodology">
         <h2>1. Deteksi panas satelit (Hotspot)</h2>
@@ -32,6 +51,7 @@ export default function SourcesPage() {
           <li><strong>Metrik termal:</strong> Suhu kecerahan kanal satelit (Kelvin) dan Daya Radiasi Api / FRP (Megawatt) jika tersedia. Nilai yang tidak tercatat tetap berlabel tidak tersedia dan tidak diubah menjadi nol.</li>
           <li><strong>Batas metodologi:</strong> Titik panas adalah anomali suhu permukaan yang terdeteksi satelit. Titik panas <em>tidak otomatis berarti kebakaran hutan terkonfirmasi</em> di lapangan, dan ketiadaan titik panas tidak membuktikan ketiadaan api (misalnya akibat tutupan awan tebal atau jeda orbit satelit).</li>
         </ul>
+        <p><strong>Mode Hexagon H3:</strong> Menjumlahkan deteksi yang lolos filter pada viewport dan periode yang sama dengan daftar. Resolusi 4/5/6 mengubah ukuran sel; sel dapat melintasi provinsi dan bukan batas administrasi. Warna cyan–ungu menyatakan jumlah deteksi, bukan AQI, luas terbakar atau jumlah kejadian kebakaran. Mode titik tetap tersedia untuk pemeriksaan individual.</p>
         <p>
           Rujukan resmi: <a href="https://firms.modaps.eosdis.nasa.gov/api/area/" target="_blank" rel="noopener noreferrer">Dokumentasi NASA FIRMS Area API ↗</a>
         </p>
@@ -49,6 +69,7 @@ export default function SourcesPage() {
           <li><strong>Pembeda penting:</strong> Nilai ini adalah <em>estimasi berdasarkan model atmosfer</em>, <strong>bukan Indeks Standar Pencemar Udara (ISPU) resmi KLHK RI</strong>, bukan AQI multisumber gabungan (O3, NO2, SO2, CO), dan bukan NowCast stasiun darat.</li>
           <li><strong>Horizon prakiraan:</strong> Prakiraan model tersedia hingga maksimal 48 jam ke depan. Rekomendasi tindakan tetap berlaku khusus untuk jam kini.</li>
         </ul>
+        <p><strong>Lapisan warna area:</strong> Snapshot mandiri mengambil 931 posisi sampling reguler 1° (49×19) pada 94°–142° BT dan 12° LS–6° LU, termasuk laut. Model CAMS sumber sekitar 0,4°; sampling dan interpolasi bilinear tidak menambah ketelitian. Area dengan sampel hilang tetap transparan. Tersedia 25 frame per jam dari jam mulai job sampai 24 jam berikutnya, dengan penanda riwayat/jam kini/prakiraan ketika waktu berjalan. Warna menyatakan konsentrasi µg/m³, <strong>bukan AQI/ISPU</strong>, dan tidak mengubah indeks 24 jam maupun rekomendasi kini. Run model tidak disediakan provider; waktu pengambilan dicatat terpisah. Snapshot fresh kurang dari 12 jam, fallback sampai 24 jam bila frame kini tersedia; sesudah itu tidak ditampilkan.</p>
         <p>
           Rujukan resmi: <a href="https://open-meteo.com/en/docs/air-quality-api" target="_blank" rel="noopener noreferrer">Open-Meteo Air Quality ↗</a> · <a href="https://atmosphere.copernicus.eu/" target="_blank" rel="noopener noreferrer">Copernicus CAMS ↗</a>
         </p>
@@ -77,10 +98,12 @@ export default function SourcesPage() {
         <ul>
           <li><strong>Batas indikatif:</strong> Garis batas wilayah kepulauan Indonesia disederhanakan untuk efisiensi komputasi penapisan titik (point-in-polygon) dan preview visual. Garis ini <em>bukan batas hukum atau klaim perbatasan kedaulatan negara</em>.</li>
           <li><strong>Gazetteer tempat:</strong> Menyediakan 105 pusat permukiman dan kota di Indonesia untuk pencarian instan tanpa GPS. Ini bukan daftar desa/kelurahan lengkap seluruh Indonesia.</li>
-          <li><strong>Basemap:</strong> Tile peta dilayani melalui CARTO Dark Matter berlisensi dengan atribusi <code>© OpenStreetMap contributors, © CARTO</code>.</li>
+          <li><strong>Overlay 38 provinsi:</strong> Dataset komunitas oleh denyherianto (commit 80aa4a9, 18 Desember 2025), lisensi CC BY 4.0. Geometri, nama dan identitas bentuk diverifikasi; asal survei upstream tidak didokumentasikan penerbit. Batas bersifat indikatif, bukan batas hukum resmi/terkini. ID bentuk Papua bukan kode administrasi resmi. Overlay ini tidak mengganti geometri penapisan negara.</li>
+          <li><strong>Peta dasar:</strong> CARTO Dark Matter memakai key proyek yang tersedia dengan atribusi © OpenStreetMap contributors, © CARTO. Jika key tidak dikonfigurasi, Map memakai Esri Dark Gray Canvas dan label Reference. Satellite memakai World Imagery dengan kredit Esri dan penyedia citra yang tercantum pada sumber; umur citra berbeda dari waktu deteksi/model udara.</li>
+          <li><strong>Globe dan Terrain:</strong> Globe adalah proyeksi tampilan; Terrain menambahkan elevasi model Mapzen Terrain Tiles dari AWS Open Data, encoding Terrarium, exaggeration 1. Elevasi tidak digunakan untuk menghitung hotspot, kualitas udara atau rekomendasi. Kamera global tidak memperluas cakupan data Indonesia; hitungan daftar mengikuti kotak cakupan geografis viewport, bukan area pandang permukaan yang presisi.</li>
         </ul>
         <p>
-          Rujukan dataset: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth Data ↗</a> · <a href="https://carto.com/basemaps/" target="_blank" rel="noopener noreferrer">CARTO Basemaps ↗</a>
+          Rujukan dataset: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth Data ↗</a> · <a href="https://github.com/denyherianto/indonesia-geojson-topojson-maps-with-38-provinces/tree/80aa4a90ac7eef5136eaa2b551b6aa5d198be27d">Dataset provinsi komunitas ↗</a> · <a href="/data/provinces-LICENSE.md">Lisensi batas CC BY 4.0 ↗</a> · <a href="https://carto.com/basemaps/" target="_blank" rel="noopener noreferrer">CARTO Basemaps ↗</a> · <a href="https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer">World Imagery & kredit ↗</a> · <a href="https://registry.opendata.aws/terrain-tiles/">Terrain Tiles ↗</a> · <a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md">Atribusi elevasi ↗</a>
         </p>
       </section>
 
