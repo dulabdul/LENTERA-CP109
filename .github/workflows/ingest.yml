@@ -1,9 +1,9 @@
-name: Hotspot ingestion (manual gate)
-# Scheduled operation remains disabled until provider/operations gates are verified.
-# Target schedule after activation:
-#   schedule:
-#     - cron: '7,37 * * * *'
+name: Hotspot Ingestion (Automated Hourly)
+
 on:
+  schedule:
+    # Berjalan otomatis setiap 1 jam pada menit ke-15 UTC (menit ke-15 WIB)
+    - cron: '15 * * * *'
   workflow_dispatch:
 permissions:
   contents: read
